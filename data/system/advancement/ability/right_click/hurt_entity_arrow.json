@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "h": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "type": "minecraft:arrow"
+            },
+            "is_direct": false
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:ability/bow/terminator/arrow/hit"
+  }
+}

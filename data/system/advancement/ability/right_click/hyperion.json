@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "click": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "components": {
+            "minecraft:custom_data": "{id:hyperion}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:ability/sword/hyperion"
+  }
+}

@@ -1,0 +1,1 @@
+give @s minecraft:diamond_pickaxe[minecraft:unbreakable={},minecraft:enchantments={efficiency:10},minecraft:item_name={"text":"Dungeonbreaker",color:"red"},minecraft:tool={default_mining_speed: 1024.0f,rules:[]}]

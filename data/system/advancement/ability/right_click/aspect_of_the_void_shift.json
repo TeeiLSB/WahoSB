@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "click": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "player": {
+          "flags": {
+            "is_sneaking": true
+          }
+        },
+        "item": {
+          "components": {
+            "minecraft:custom_data": "{id:aspect_of_the_void,ethermerge:1,tuned_transmission:0}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:ability/sword/aspect_of_the_void_shift"
+  }
+}
