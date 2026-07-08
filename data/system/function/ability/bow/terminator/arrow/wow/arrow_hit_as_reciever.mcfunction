@@ -1,10 +1,40 @@
-data merge entity @s {HurtTime:0}
+
+data merge entity @s {HurtTime:0} 
 
 
 execute on attacker run tag @s add Shooter
+# damage apply
+execute store result score #CurrentHealth Temporary run data get entity @s Health
+scoreboard players operation #CurrentHealth Temporary -= @n[tag=Shooter] Status.ArrowDamage
+execute store result storage lib: Damage.apply int 1 run scoreboard players get #CurrentHealth Temporary
+
+data modify entity @s Health set from storage lib: Damage.apply
+
+
+
+# damage indicator
+
+#rng
+ execute store result storage lib: random.x int 1 run random value 0..25
+ execute store result storage lib: random.y int 1 run random value 0..50
+ execute store result storage lib: random.z int 1 run random value 0..25
+
+execute store result storage lib: dmg.value int 1 run scoreboard players get @n[tag=Shooter] Status.ArrowDamage
+loot spawn ~ ~ ~ loot system:damage/damage_indicator
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run data modify entity @s CustomName set from entity @s Item.components."minecraft:custom_name"
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run data merge entity @s {CustomNameVisible:1b,PickupDelay:32767,PortalCooldown:32s,Motion:[0,0,0],NoGravity:1b}
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run function system:ability/bow/terminator/arrow/wow/random_tp with storage lib: random
+data remove storage lib: dmg
+data remove storage lib: random
+
+scoreboard players reset #CurrentHealth Temporary
+scoreboard players reset #Damage Temporary
+
+# ferocity
 execute store result score $rng Temporary run random value 0..1
 execute if score $rng Temporary matches 1 run tag @e[distance=0.1..15,type=!player,type=!item,type=!marker,type=!arrow,limit=1,sort=random] add BouncyTarget
 execute at @s positioned ~ ~1 ~ facing entity @n[tag=BouncyTarget] eyes summon arrow run function system:ability/bow/terminator/arrow/wow/init
 tag @e remove BouncyTarget
 
 execute on attacker run tag @s remove Shooter
+

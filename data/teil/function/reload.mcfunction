@@ -24,6 +24,10 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add ray_steps dummy
  scoreboard objectives add ray_success dummy
  scoreboard objectives add shelmet dummy
+ scoreboard objectives add Ferocity_Damage dummy
+ scoreboard objectives add Ferocity_CD dummy
+ scoreboard objectives add Status.Ferocity dummy
+ scoreboard objectives add Status.ArrowDamage dummy
 
 
 # reload確認

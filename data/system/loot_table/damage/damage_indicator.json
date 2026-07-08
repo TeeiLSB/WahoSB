@@ -1,0 +1,44 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "barrier",
+          "functions": [
+            {
+              "function": "set_custom_data",
+              "tag": "{dmg_ind:1b}"
+            },
+            {
+              "function": "set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "text": "✧",
+                  "color": "white"
+                },
+                {
+                  "nbt": "dmg.value",
+                  "storage": "lib:",
+                  "color": "white"
+                },
+                {
+                  "text": "✧",
+                  "color": "red"
+                }
+              ]
+            },
+            {
+                "function": "minecraft:set_components",
+                "components": {
+                    "item_model": "custom/misc/nothing"
+                }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
