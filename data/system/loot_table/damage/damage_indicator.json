@@ -20,9 +20,89 @@
                   "color": "white"
                 },
                 {
-                  "nbt": "dmg.value",
-                  "storage": "lib:",
+                  "score": {
+                    "name": "#d1b",
+                    "objective": "Temporary"
+                  },
                   "color": "white"
+                },
+                {
+                    "nbt": "DamageDec.1b",
+                   "storage": "lib:",
+                   "color": "white"
+                },
+                {
+                  "score": {
+                    "name": "#d100m",
+                    "objective": "Temporary"
+                  },
+                  "color": "yellow"
+                },
+                {
+                  "score": {
+                    "name": "#d10m",
+                    "objective": "Temporary"
+                  },
+                  "color": "gold"
+                },
+                {
+                  "score": {
+                    "name": "#d1m",
+                    "objective": "Temporary"
+                  },
+                  "color": "red"
+                },
+                {
+                    "nbt": "DamageDec.1m",
+                   "storage": "lib:",
+                   "color": "red"
+                },
+                {
+                  "score": {
+                    "name": "#d100k",
+                    "objective": "Temporary"
+                  },
+                  "color": "red"
+                },
+                {
+                  "score": {
+                    "name": "#d10k",
+                    "objective": "Temporary"
+                  },
+                  "color": "white"
+                },
+                {
+                  "score": {
+                    "name": "#d1k",
+                    "objective": "Temporary"
+                  },
+                  "color": "white"
+                },
+                {
+                    "nbt": "DamageDec.1k",
+                   "storage": "lib:",
+                   "color": "white"
+                },
+                {
+                  "score": {
+                    "name": "#d100",
+                    "objective": "Temporary"
+                  },
+                  "color": "yellow"
+                },
+                {
+                  "score": {
+                    "name": "#d10",
+                    "objective": "Temporary"
+                  },
+                  "color": "gold"
+                },
+                {
+                  "score": {
+                    "name": "#d1",
+                    "objective": "Temporary"
+                  },
+                  "color": "red"
                 },
                 {
                   "text": "✧",

@@ -13,6 +13,12 @@ data modify entity @s Health set from storage lib: Damage.apply
 
 
 # damage indicator
+scoreboard players operation #num Temporary = @n[tag=Shooter] Status.ArrowDamage
+execute if score @n[tag=Shooter] Status.ArrowDamage matches 1000.. run data modify storage lib: DamageDec.1k set value ","
+execute if score @n[tag=Shooter] Status.ArrowDamage matches 1000000.. run data modify storage lib: DamageDec.1m set value ","
+execute if score @n[tag=Shooter] Status.ArrowDamage matches 1000000000.. run data modify storage lib: DamageDec.1b set value ","
+data remove storage lib: DamageDec
+function system:api/number_converter/run
 
 #rng
  execute store result storage lib: random.x int 1 run random value 0..25
@@ -26,6 +32,7 @@ execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run function system:ability/bow/terminator/arrow/wow/random_tp with storage lib: random
 data remove storage lib: dmg
 data remove storage lib: random
+
 
 scoreboard players reset #CurrentHealth Temporary
 scoreboard players reset #Damage Temporary
