@@ -6,11 +6,8 @@ execute on attacker run tag @s add Shooter
 # damage apply
 execute store result score #CurrentHealth Temporary run data get entity @s Health
 scoreboard players operation #CurrentHealth Temporary -= @n[tag=Shooter] Status.ArrowDamage
-execute store result storage lib: Damage.apply int 1 run scoreboard players get #CurrentHealth Temporary
-
-data modify entity @s Health set from storage lib: Damage.apply
-
-
+scoreboard players add #CurrentHealth Temporary 1
+execute store result entity @s Health int 1 run scoreboard players get #CurrentHealth Temporary
 
 # damage indicator
 scoreboard players operation #num Temporary = @n[tag=Shooter] Status.ArrowDamage
@@ -37,9 +34,9 @@ data remove storage lib: random
 scoreboard players reset #CurrentHealth Temporary
 scoreboard players reset #Damage Temporary
 
-# ferocity
+# bouncy
 execute store result score $rng Temporary run random value 0..1
-execute if score $rng Temporary matches 1 run tag @e[distance=0.1..15,type=!player,type=!item,type=!marker,type=!arrow,limit=1,sort=random] add BouncyTarget
+execute if score $rng Temporary matches 0.. run tag @e[distance=0.1..15,type=!player,type=!item,type=!marker,type=!arrow,limit=1,sort=random] add BouncyTarget
 execute at @s positioned ~ ~1 ~ facing entity @n[tag=BouncyTarget] eyes summon arrow run function system:ability/bow/terminator/arrow/wow/init
 tag @e remove BouncyTarget
 
