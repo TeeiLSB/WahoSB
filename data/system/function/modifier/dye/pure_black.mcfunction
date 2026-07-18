@@ -1,0 +1,1 @@
+item modify entity @s weapon.mainhand {function: "set_components",components:{"dyed_color":0}}

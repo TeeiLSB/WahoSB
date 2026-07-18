@@ -1,0 +1,1 @@
+$item modify entity @s weapon.mainhand {function:"set_components",components:{"item_name":{"text":"$(n)","color":"$(c)"}}}

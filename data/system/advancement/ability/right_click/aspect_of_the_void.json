@@ -10,7 +10,7 @@
         },
         "item": {
           "components": {
-            "minecraft:custom_data": "{id:aspect_of_the_void,ethermerge:1,tuned_transmission:0}"
+            "minecraft:custom_data": "{id:aspect_of_the_void,ethermerge:1,tuned_transmission:0,WeaponType:melee}"
           }
         }
       }

@@ -5,7 +5,7 @@
       "conditions": {
         "item": {
           "components": {
-            "minecraft:custom_data": "{id:hyperion}"
+            "minecraft:custom_data": "{id:hyperion,WeaponType:melee}"
           }
         }
       }

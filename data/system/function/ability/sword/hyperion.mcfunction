@@ -1,5 +1,5 @@
 # shadow warp
-execute if score @s CD.default matches 0 at @s anchored eyes positioned ^ ^ ^ anchored feet run function system:raycast/nomal/start {"reach":"100"}
+execute as @s[tag=!InF7] if score @s CD.default matches 0 at @s anchored eyes positioned ^ ^ ^ anchored feet run function system:raycast/nomal/start {"reach":"100"}
 
 # implosion
 execute if score @s CD.default matches 0 run playsound entity.generic.explode master @s ~ ~ ~ 0.5 1

@@ -13,5 +13,8 @@
  execute as @e[type=item,nbt={PortalCooldown:0,Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}}] at @s run kill @s
 
 
- execute as @e[type=ender_dragon] run data merge entity @s {Motion:[0,0,0]}
- execute as @e[type=wither] run data merge entity @s {Motion:[0,0,0]}
+# dungeon tick
+ function system:dungeon/tick
+
+#  every player tick
+ execute as @a at @s run function system:core/player/tick

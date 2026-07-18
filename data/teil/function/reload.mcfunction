@@ -15,6 +15,8 @@ forceload add -16 -16 16 16
 # 汎用シュルカーボックス
 setblock 0 0 0 black_shulker_box
 
+# every player reload
+ execute as @a at @s run function system:core/player/reload
 
 # score
  scoreboard objectives add CD.default dummy
@@ -28,7 +30,10 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Ferocity_CD dummy
  scoreboard objectives add Status.Ferocity dummy
  scoreboard objectives add Status.ArrowDamage dummy
-
+ scoreboard objectives add Dungeon.Class.Mage.BeamRange dummy
+ scoreboard objectives add Status.MageBeamDamage dummy
+ scoreboard objectives add Status.AttackSpeed dummy
+ scoreboard objectives add Player.AttackCooldown dummy
 
 # reload確認
 say Reloaded!
