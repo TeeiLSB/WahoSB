@@ -1,0 +1,1 @@
+function system:core/player/pet/follow/main

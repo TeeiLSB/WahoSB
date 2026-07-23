@@ -34,6 +34,6 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.MageBeamDamage dummy
  scoreboard objectives add Status.AttackSpeed dummy
  scoreboard objectives add Player.AttackCooldown dummy
-
+ scoreboard objectives add Tick dummy
 # reload確認
 say Reloaded!

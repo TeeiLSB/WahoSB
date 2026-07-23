@@ -1,4 +1,4 @@
-scoreboard players set $MotionPower Temporary 300
+scoreboard players set $MotionPower Temporary 250
 
 data modify entity @s Rotation set from entity @n[tag=Shooter] Rotation
 data modify entity @s Owner set from entity @n[tag=Shooter] UUID
