@@ -7,6 +7,9 @@ scoreboard objectives add Constant dummy
 # Constant
 function teil:const
 
+effect give @a weakness infinite 255 true
+effect give @a saturation infinite 255 true
+
 
 # 0,0付近を常にロードする
 execute in overworld run forceload add -16 -16 16 16
@@ -28,6 +31,7 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add shelmet dummy
  scoreboard objectives add Ferocity_Damage dummy
  scoreboard objectives add Ferocity_CD dummy
+ scoreboard objectives add Ferocity_Remain dummy
  scoreboard objectives add Status.Ferocity dummy
  scoreboard objectives add Status.ArrowDamage dummy
  scoreboard objectives add Dungeon.Class.Mage.BeamRange dummy
@@ -35,5 +39,6 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.AttackSpeed dummy
  scoreboard objectives add Player.AttackCooldown dummy
  scoreboard objectives add Tick dummy
+ scoreboard objectives add Status.MeleeDamage dummy
 # reload確認
 say Reloaded!

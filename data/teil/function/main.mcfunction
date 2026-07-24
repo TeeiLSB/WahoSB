@@ -2,7 +2,7 @@
  execute as @a at @s run function system:ability/sword/tick
 
 # fero
- execute as @e[scores={Ferocity_CD=0..}] at @s run function system:core/player/stats/ferocity/tick
+ execute as @e[scores={Ferocity_CD=0..,Ferocity_Remain=1..}] at @s run function system:core/player/stats/ferocity/tick
 
 # clear arrow
 # arrow tick
