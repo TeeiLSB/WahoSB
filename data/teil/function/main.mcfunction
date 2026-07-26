@@ -23,6 +23,12 @@
 # pet tick
  function system:core/player/pet/tick
 
+# autokill
+ function system:api/autokill/tick
+
+# item ability tick
+ function system:ability/ability_tick/list
+
 # tick
  scoreboard players add $tick Tick 1
  execute if score $tick Tick matches 21 run scoreboard players set $tick Tick 1

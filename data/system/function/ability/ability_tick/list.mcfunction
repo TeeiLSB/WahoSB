@@ -1,0 +1,1 @@
+execute as @e[tag=Item.BonzoStaff.Balloon,type=item_display] at @s run function system:ability/ability_tick/bonzo_staff/balloon

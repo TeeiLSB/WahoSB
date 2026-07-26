@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "int": {
+      "trigger": "minecraft:any_block_use",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "position": {
+                "x": 111.5,
+                "y": 113.5,
+                "z": 73.5
+              },
+              "block": {
+                "blocks": "minecraft:chest",
+                "nbt": {}
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:dungeon/f7/terminal/s1/1"
+  }
+}

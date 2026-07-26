@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "jump": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "flags": {
+            "is_sneaking": true,
+            "is_on_ground": true
+          },
+          "equipment": {
+            "feet": {
+              "components": {
+                "minecraft:custom_data": "{id:spring_boots}"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:ability/armor/spring_boots/trigger"
+  }
+}

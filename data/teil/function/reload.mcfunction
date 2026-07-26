@@ -9,7 +9,10 @@ function teil:const
 
 effect give @a weakness infinite 255 true
 effect give @a saturation infinite 255 true
+effect give @a resistance infinite 255 true
+effect give @a fire_resistance infinite 255 true
 
+gamerule fall_damage false
 
 # 0,0付近を常にロードする
 execute in overworld run forceload add -16 -16 16 16
@@ -40,5 +43,9 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Player.AttackCooldown dummy
  scoreboard objectives add Tick dummy
  scoreboard objectives add Status.MeleeDamage dummy
+ scoreboard objectives add F7.LavaBounce.CD dummy
+ scoreboard objectives add AutoKill dummy
+ scoreboard objectives add Item.Ability.SpringBoots dummy
+ scoreboard objectives add Item.Ability.SpringBoots.Sound dummy
 # reload確認
 say Reloaded!
