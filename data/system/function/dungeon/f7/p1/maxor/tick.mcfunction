@@ -23,8 +23,15 @@ execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard player
 execute if score @s Status.Health matches ..1 run function system:dungeon/f7/p1/maxor/death_trigger
 
 
+
 # enrageしているときは#MaxorHittedLaserをreset
 execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players reset #MaxorHittedLaser F7.Gimmick.Status
+
+# bossbar
+scoreboard players operation #BossHPRate Temporary = @s Status.Health
+scoreboard players operation #BossHPRate Temporary /= #1000000 Constant
+execute store result bossbar wahosb:f7 value run scoreboard players get #BossHPRate Temporary
+scoreboard players reset #BossHPRate Temporary
 
 # maxor hp check
 title @a actionbar {"score":{"name":"@s","objective":"Status.Health"}}

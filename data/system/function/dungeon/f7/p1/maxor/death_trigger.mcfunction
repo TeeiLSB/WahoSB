@@ -1,9 +1,4 @@
-
-fill 69 220 49 77 220 32 air
-
-
-
-
+scoreboard players set $F7.Boss.DeathSound F7.Gimmick.Status 60
 
 
 # real death

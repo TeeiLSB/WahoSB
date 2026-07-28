@@ -1,0 +1,1 @@
+execute as @e[type=mannequin,tag=Bot] at @s run function system:bot/main/start

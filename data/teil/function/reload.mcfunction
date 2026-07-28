@@ -24,6 +24,9 @@ setblock 0 0 0 black_shulker_box
 # every player reload
  execute as @a at @s run function system:core/player/reload
 
+# bot reload
+ function system:bot/reload
+
 # score
  scoreboard objectives add CD.default dummy
  scoreboard players set @a CD.default 1
@@ -59,7 +62,11 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.Intelligence dummy
  scoreboard objectives add Status.BaseDamage dummy
 
+ # mob status
+ scoreboard objectives add Status.MobAttackDamage dummy
+
  #* basedamageは武器そのもの weapondamageはenchantとかの計算をやった後
+
 
  
 # foeceloads

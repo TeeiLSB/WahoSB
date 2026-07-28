@@ -3,4 +3,4 @@ give @s player_head\
         profile={properties:[{name:"textures",\
         value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWM0ODZhZjNiODgyNzY2ZTgyYTBiYzE2NjVmZjAyZWI2ZTg3M2I2ZTBkNzcxZjNhZGFiYzc1OWI3MjAyMjZhIn19fQ=="}]},\
                 attribute_modifiers=[{id:"block_interaction_range",type:"block_interaction_range",amount:-1000000000,operation:"add_value",slot:"hand"},\
-                        {id:"movement_speed",type:"movement_speed",amount:4,operation: "add_multiplied_base",slot:"head"}]]
+                        {id:"movement_speed",type:"movement_speed",amount:3,operation: "add_multiplied_base",slot:"head"}]]
