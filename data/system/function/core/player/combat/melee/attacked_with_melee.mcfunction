@@ -4,10 +4,7 @@ damage @s 0.1 arrow by @p[tag=MeleeAttacker] from @p[tag=MeleeAttacker]
 execute on attacker run tag @s add MeleeAttacker
 
 # damage apply
-execute store result score #CurrentHealth Temporary run data get entity @s Health
-scoreboard players operation #CurrentHealth Temporary -= @p[tag=MeleeAttacker] Status.MeleeDamage
-scoreboard players add #CurrentHealth Temporary 1
-execute store result entity @s Health int 1 run scoreboard players get #CurrentHealth Temporary
+scoreboard players operation @s Status.Health -= @p[tag=MeleeAttacker] Status.MeleeDamage
 
 # damage indicator
 scoreboard players operation #num Temporary = @p[tag=MeleeAttacker] Status.MeleeDamage

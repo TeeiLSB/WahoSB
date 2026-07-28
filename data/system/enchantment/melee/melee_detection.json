@@ -24,7 +24,7 @@
         },
         "effect": {
           "type": "minecraft:run_function",
-          "function": "system:core/player/combat/melee/attacked_with_melee"
+          "function": "system:core/player/combat/melee/check"
         },
         "enchanted": "attacker",
         "affected": "victim"

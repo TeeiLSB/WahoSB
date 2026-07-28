@@ -3,10 +3,7 @@ damage @s 0.1 magic
 data modify entity @s HurtTime set value 0
 
 # damage apply
-execute store result score #CurrentHealth Temporary run data get entity @s Health
-scoreboard players operation #CurrentHealth Temporary -= @s Ferocity_Damage
-scoreboard players add #CurrentHealth Temporary 1
-execute store result entity @s Health int 1 run scoreboard players get #CurrentHealth Temporary
+scoreboard players operation @s Status.Health -= @s Ferocity_Damage
 
 # damage indicator
 scoreboard players operation #num Temporary = @s Ferocity_Damage

@@ -4,11 +4,7 @@ damage @s 0.0001 magic by @p[tag=Beamer]
 data merge entity @s {HurtTime:0} 
 
 # damage apply
-execute store result score #CurrentHealth Temporary run data get entity @s Health
-scoreboard players operation #CurrentHealth Temporary -= @n[tag=Beamer] Status.MageBeamDamage
-scoreboard players add #CurrentHealth Temporary 1
-execute store result entity @s Health int 1 run scoreboard players get #CurrentHealth Temporary
-
+scoreboard players operation @s Status.Health -= @n[tag=Beamer] Status.MageBeamDamage
 # damage indicator
 scoreboard players operation #num Temporary = @n[tag=Beamer] Status.MageBeamDamage
 execute if score @n[tag=Beamer] Status.MageBeamDamage matches 1000.. run data modify storage lib: DamageDec.1k set value ","

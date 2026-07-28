@@ -1,0 +1,1 @@
+execute summon item_display run function system:dungeon/f7/p1/crystal/init

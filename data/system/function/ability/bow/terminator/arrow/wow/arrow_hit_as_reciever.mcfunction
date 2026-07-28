@@ -4,10 +4,7 @@ data merge entity @s {HurtTime:0}
 
 execute on attacker run tag @s add Shooter
 # damage apply
-execute store result score #CurrentHealth Temporary run data get entity @s Health
-scoreboard players operation #CurrentHealth Temporary -= @n[tag=Shooter] Status.ArrowDamage
-scoreboard players add #CurrentHealth Temporary 1
-execute store result entity @s Health int 1 run scoreboard players get #CurrentHealth Temporary
+scoreboard players operation @s Status.Health -= @n[tag=Shooter] Status.ArrowDamage
 
 # damage indicator
 scoreboard players operation #num Temporary = @n[tag=Shooter] Status.ArrowDamage

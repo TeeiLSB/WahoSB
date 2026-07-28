@@ -1,0 +1,37 @@
+# get status
+function system:core/player/stats/combat_damage_calc/get_stats/basedamage
+function system:core/player/stats/combat_damage_calc/get_stats/critdamage
+function system:core/player/stats/combat_damage_calc/get_stats/strength
+function system:core/player/stats/combat_damage_calc/get_stats/intelligence
+
+
+
+# base damage +5
+scoreboard players operation #DamageDealt Temporary = @s Status.WeaponDamage
+scoreboard players operation #DamageDealt Temporary += #5 Constant
+
+# 1+ str/100 
+scoreboard players operation #STR Temporary = @s Status.Strength
+scoreboard players operation #STR Temporary /= #100 Constant
+scoreboard players operation #STR Temporary += #1 Constant
+
+# crit damage (1+Crit/100) 
+scoreboard players operation #CD Temporary = @s Status.CritDamage
+scoreboard players operation #CD Temporary /= #100 Constant
+scoreboard players operation #CD Temporary += #1 Constant
+
+# calc
+scoreboard players operation #DamageDealt Temporary *= #STR Temporary
+scoreboard players operation #DamageDealt Temporary *= #CD Temporary
+
+
+# apply
+scoreboard players operation @s Status.MeleeDamage = #DamageDealt Temporary
+scoreboard players operation @s Status.ArrowDamage = #DamageDealt Temporary
+
+
+execute if entity @s[tag=Dungeon.Class.Mage] run function system:core/player/stats/combat_damage_calc/mage_beam
+
+
+
+title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}}]

@@ -47,5 +47,25 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add AutoKill dummy
  scoreboard objectives add Item.Ability.SpringBoots dummy
  scoreboard objectives add Item.Ability.SpringBoots.Sound dummy
+ scoreboard objectives add F7.Gimmick.Status dummy
+ # stats scores
+ scoreboard objectives add Status.Strength dummy
+ scoreboard objectives add Status.CritDamage dummy
+ scoreboard objectives add Status.CritChance dummy
+ scoreboard objectives add Status.Health dummy
+ scoreboard objectives add Status.MaxHealth dummy
+ scoreboard objectives add Status.Defense dummy
+ scoreboard objectives add Status.WeaponDamage dummy
+ scoreboard objectives add Status.Intelligence dummy
+ scoreboard objectives add Status.BaseDamage dummy
+
+ #* basedamageは武器そのもの weapondamageはenchantとかの計算をやった後
+
+ 
+# foeceloads
+forceload add 81 181 69 152
+
+
 # reload確認
+
 say Reloaded!
