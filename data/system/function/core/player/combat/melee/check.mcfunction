@@ -1,1 +1,0 @@
-execute if entity @s[tag=!Invulnerable] run function system:core/player/combat/melee/attacked_with_melee

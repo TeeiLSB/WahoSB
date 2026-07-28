@@ -4,7 +4,7 @@ damage @s 0.0001 magic by @p[tag=Beamer]
 data merge entity @s {HurtTime:0} 
 
 # damage apply
-scoreboard players operation @s Status.Health -= @n[tag=Beamer] Status.MageBeamDamage
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= @n[tag=Beamer] Status.MageBeamDamage
 # damage indicator
 scoreboard players operation #num Temporary = @n[tag=Beamer] Status.MageBeamDamage
 execute if score @n[tag=Beamer] Status.MageBeamDamage matches 1000.. run data modify storage lib: DamageDec.1k set value ","
@@ -20,7 +20,7 @@ function system:api/number_converter/run
  tag @s add Hit.This
 
 execute store result storage lib: dmg.value int 1 run scoreboard players get @n[tag=Beamer] Status.MageBeamDamage
-loot spawn ~ ~ ~ loot system:damage/damage_indicator
+execute if entity @s[tag=!Invulnerable] run loot spawn ~ ~ ~ loot system:damage/damage_indicator
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run data modify entity @s CustomName set from entity @s Item.components."minecraft:custom_name"
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run data merge entity @s {CustomNameVisible:1b,PickupDelay:32767,PortalCooldown:32s,Motion:[0,0,0],NoGravity:1b}
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] at @n[tag=Hit.This] positioned ~ ~-0.3 ~ run function system:ability/bow/terminator/arrow/wow/random_tp with storage lib: random

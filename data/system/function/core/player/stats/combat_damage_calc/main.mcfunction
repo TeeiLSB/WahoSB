@@ -33,5 +33,5 @@ scoreboard players operation @s Status.ArrowDamage = #DamageDealt Temporary
 execute if entity @s[tag=Dungeon.Class.Mage] run function system:core/player/stats/combat_damage_calc/mage_beam
 
 
-
-title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}}]
+# status check actionbar
+#title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}}]

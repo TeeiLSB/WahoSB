@@ -4,7 +4,7 @@ damage @s 0.1 arrow by @p[tag=MeleeAttacker] from @p[tag=MeleeAttacker]
 execute on attacker run tag @s add MeleeAttacker
 
 # damage apply
-scoreboard players operation @s Status.Health -= @p[tag=MeleeAttacker] Status.MeleeDamage
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= @p[tag=MeleeAttacker] Status.MeleeDamage
 
 # damage indicator
 scoreboard players operation #num Temporary = @p[tag=MeleeAttacker] Status.MeleeDamage
@@ -20,7 +20,7 @@ function system:api/number_converter/run
  execute store result storage lib: random.z int 1 run random value 10..30
 
 execute store result storage lib: dmg.value int 1 run scoreboard players get @p[tag=MeleeAttacker] Status.MeleeDamage
-loot spawn ~ ~ ~ loot system:damage/damage_indicator
+execute if entity @s[tag=!Invulnerable] run loot spawn ~ ~ ~ loot system:damage/damage_indicator
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run data modify entity @s CustomName set from entity @s Item.components."minecraft:custom_name"
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] run data merge entity @s {CustomNameVisible:1b,PickupDelay:32767,PortalCooldown:20s,Motion:[0,0,0],NoGravity:1b}
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] positioned ~ ~-0.3 ~ run function system:ability/bow/terminator/arrow/wow/random_tp with storage lib: random

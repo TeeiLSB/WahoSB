@@ -17,5 +17,6 @@ execute if block 73 225 73 coal_block run setblock 73 225 73 glass
 
 setblock 73 224 73 black_stained_glass
 execute if score $CrystalCount F7.Gimmick.Status matches 2 run setblock 73 224 73 red_stained_glass
+execute if score $CrystalCount F7.Gimmick.Status matches 1 run setblock 73 224 73 yellow_stained_glass
 
 execute if block 73 225 73 air run setblock 73 225 73 gray_carpet
