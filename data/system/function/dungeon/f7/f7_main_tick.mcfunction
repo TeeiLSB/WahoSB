@@ -16,8 +16,6 @@ execute if score $tick Tick matches 10 run function system:dungeon/f7/p1/beacon_
 execute if score $F7.Boss.DeathSound F7.Gimmick.Status matches 1 run fill 69 220 49 77 220 32 air
 
 
-
-
 # maxor tick
  execute as @e[type=wither,tag=Mob.Dungeon.Boss.Maxor] at @s run function system:dungeon/f7/p1/maxor/tick
 

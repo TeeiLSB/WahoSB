@@ -3,11 +3,18 @@ execute store result score #maxorhealth Temporary run data get entity @s Health
 execute if score #maxorhealth Temporary matches ..151 run data modify entity @s Health set value 300f
 scoreboard players reset #maxorhealth Temporary
 
-# playerを追尾
-data modify entity @s Motion set value [0.0,0.0,0.0]
-execute unless score #MaxorHittedLaser F7.Gimmick.Status matches 1 run rotate @s facing entity @p
-execute unless score #MaxorHittedLaser F7.Gimmick.Status matches 1 run execute if entity @p[distance=3..] run tp @s ^ ^ ^0.4
+# playerを追尾 (F7.AgroWither tagを優先して追尾)
 
+data modify entity @s Motion set value [0.0,0.0,0.0]
+execute at @s run rotate @s facing entity @n[type=#teil:players,distance=3..] eyes
+execute at @s run rotate @s facing entity @n[type=#teil:players,distance=3..,tag=F7.AgroWither] eyes
+execute at @s unless score #MaxorHittedLaser F7.Gimmick.Status matches 1 unless entity @n[type=#teil:players,distance=..3] run tp @s ^ ^ ^0.4
+execute at @s if entity @n[type=#teil:players,distance=..200] unless score #MaxorHittedLaser F7.Gimmick.Status matches 1 if entity @n[type=#teil:players,distance=3.. ,tag=F7.AgroWither] run tp @s ^ ^ ^0.1
+
+# agroは2人以上だめ！
+execute store result score #agro_check Temporary if entity @e[type=#teil:players, tag=F7.AgroWither]
+execute at @s if score #agro_check Temporary matches 2.. run function system:dungeon/f7/p1/maxor/remove_agro_tag
+scoreboard players reset #agro_check Temporary
 
 # maxorはレーザーの近くにいる以外の時無敵にする
 tag @s add Invulnerable

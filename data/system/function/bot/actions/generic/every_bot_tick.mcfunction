@@ -1,0 +1,1 @@
+execute if score @s Bot.Action.Wait matches 1.. run function system:bot/actions/generic/wait/wait_tick

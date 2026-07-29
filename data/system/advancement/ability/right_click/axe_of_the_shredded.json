@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "click": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "components": {
+            "minecraft:custom_model_data": {"strings": ["axe_of_the_shredded"]}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:ability/sword/axe_of_the_shredded"
+  }
+}

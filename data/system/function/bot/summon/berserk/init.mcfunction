@@ -1,18 +1,26 @@
-data merge entity @s {Invulnerable:1b,immovable:true,CustomNameVisible:1b,CustomName:{"text":"§6Berserk"},hide_description:true}
+data merge entity @s {Invulnerable:1b,CustomNameVisible:1b,CustomName:{"text":"§6Berserk"},hide_description:true,Glowing:1b}
 
 effect give @s resistance infinite 255 true
 effect give @s fire_resistance infinite 255 true
+
+attribute @s knockback_resistance base set 1000
 
 # goal marker ID
 execute store result score @s Bot.GoalMarkerID run data get entity @s UUID[0]
 
 # moving
 scoreboard players set @s Bot.IsMoving 0
+# process
+scoreboard players set @s Bot.ActionProcess 0
+#in action
+scoreboard players set @s Bot.IsInAction 0
 
 tag @s add F7.Reset
 tag @s add Invulnerable
 tag @s add Bot.Berserk
 tag @s add Bot
+
+team join Berserk
 
 item replace entity @s armor.head with player_head\
         [item_name={"text":"Diamond Necron Head","color":red},custom_data={id:diamond_necron_head},\
