@@ -6,6 +6,4 @@ scoreboard players set @s AutoKill 120
 
 scoreboard players operation @s Status.MeleeDamage = @n[type=#teil:players,tag=This] Status.MeleeDamage
 
-title @a title {"storage":"lib:",nbt:generic.comp}
-
-data modify entity @s CustomName set from storage lib: generic.comp
+execute store result score @s OwnerUUID run data get entity @n[tag=This] UUID[0]

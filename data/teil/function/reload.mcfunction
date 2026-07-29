@@ -51,6 +51,8 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Item.Ability.SpringBoots dummy
  scoreboard objectives add Item.Ability.SpringBoots.Sound dummy
  scoreboard objectives add F7.Gimmick.Status dummy
+ scoreboard objectives add OwnerUUID dummy
+ scoreboard objectives add Dungeon.Blessing dummy
  # stats scores
  scoreboard objectives add Status.Strength dummy
  scoreboard objectives add Status.CritDamage dummy
@@ -66,6 +68,7 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.MobAttackDamage dummy
 
  #* basedamageは武器そのもの weapondamageはenchantとかの計算をやった後
+
 
 
  

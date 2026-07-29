@@ -3,15 +3,19 @@ data merge entity @s {HurtTime:0}
 
 
 execute on attacker run tag @s add Shooter
+
+# calc defense
+scoreboard players operation #damage Temporary = @n[tag=Shooter] Status.ArrowDamage
+scoreboard players operation #Temp Temporary = @s Status.Defense
+scoreboard players add #Temp Temporary 100
+scoreboard players operation #damage Temporary /= #Temp Temporary
+scoreboard players operation #damage Temporary *= #100 Constant
+
 # damage apply
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= @n[tag=Shooter] Status.ArrowDamage
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
 
 # damage indicator
-scoreboard players operation #num Temporary = @n[tag=Shooter] Status.ArrowDamage
-execute if score @n[tag=Shooter] Status.ArrowDamage matches 1000.. run data modify storage lib: DamageDec.1k set value ","
-execute if score @n[tag=Shooter] Status.ArrowDamage matches 1000000.. run data modify storage lib: DamageDec.1m set value ","
-execute if score @n[tag=Shooter] Status.ArrowDamage matches 1000000000.. run data modify storage lib: DamageDec.1b set value ","
-data remove storage lib: DamageDec
+scoreboard players operation #num Temporary = #damage Temporary
 function system:api/number_converter/run
 
 #rng
@@ -33,7 +37,7 @@ scoreboard players reset #Damage Temporary
 
 # bouncy
 execute store result score $rng Temporary run random value 0..1
-execute if entity @s[tag=!Invulnerable] if score $rng Temporary matches 0..1 run tag @e[distance=0.1..15,type=!player,type=!item,type=!marker,type=!arrow,type=!armor_stand,limit=1,sort=random] add BouncyTarget
+execute if entity @s[tag=!Invulnerable] if score $rng Temporary matches 1 run tag @e[distance=0.1..6,type=!player,type=!item,type=!marker,type=!arrow,type=!armor_stand,limit=1,sort=random] add BouncyTarget
 execute at @s positioned ~ ~1 ~ facing entity @n[tag=BouncyTarget] eyes summon arrow run function system:ability/bow/terminator/arrow/wow/init
 tag @e remove BouncyTarget
 

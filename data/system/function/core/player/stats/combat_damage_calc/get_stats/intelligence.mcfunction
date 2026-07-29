@@ -9,3 +9,4 @@ scoreboard players operation @s Status.Intelligence += #GetHead Temporary
 scoreboard players operation @s Status.Intelligence += #GetChest Temporary
 scoreboard players operation @s Status.Intelligence += #GetLegs Temporary
 scoreboard players operation @s Status.Intelligence += #GetFeet Temporary
+scoreboard players operation @s Status.Intelligence += #BonusInt Status.Intelligence

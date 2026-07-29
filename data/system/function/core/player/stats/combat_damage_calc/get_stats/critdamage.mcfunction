@@ -9,3 +9,4 @@ scoreboard players operation @s Status.CritDamage += #GetHead Temporary
 scoreboard players operation @s Status.CritDamage += #GetChest Temporary
 scoreboard players operation @s Status.CritDamage += #GetLegs Temporary
 scoreboard players operation @s Status.CritDamage += #GetFeet Temporary
+scoreboard players operation @s Status.CritDamage += #BonusCrit Status.CritDamage

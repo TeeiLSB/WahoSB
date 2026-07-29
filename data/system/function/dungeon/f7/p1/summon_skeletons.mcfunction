@@ -41,3 +41,17 @@ execute positioned 80 238 49 summon wither_skeleton run function asset:mobs/dung
 # 右クリスタル上
 execute positioned 66 238 49 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_guard
 execute positioned 62 238 49 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_guard
+
+
+# laser front
+execute positioned 75 224 67 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_guard
+execute positioned 73 224 66 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_guard
+execute positioned 72 224 67 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_guard
+execute positioned 73 224 65 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_guard
+
+# laser
+execute positioned 76 225 76 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_miner
+execute positioned 74 225 75 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_miner
+execute positioned 72 225 74 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_miner
+execute positioned 70 225 73 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_miner
+execute positioned 68 225 72 summon wither_skeleton run function asset:mobs/dungeon/f7/wither_miner

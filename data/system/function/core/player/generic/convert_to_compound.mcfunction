@@ -1,1 +1,0 @@
-$data modify storage lib: generic.comp set value {"a":$(name)}

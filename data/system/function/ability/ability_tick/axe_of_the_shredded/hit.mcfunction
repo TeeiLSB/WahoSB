@@ -1,22 +1,25 @@
 tag @n[tag=AotsThrower] add Aots.Hitted
 
-
-
-execute if entity @s[type=wither] run function system:ability/ability_tick/axe_of_the_shredded/addagrotag with entity @s CustomName
+scoreboard players operation #IDCHECK Temporary = @n[tag=AotsThrower] OwnerUUID
+execute as @e[type=#teil:players,distance=..300] store result score @s OwnerUUID run data get entity @s UUID[0]
+execute as @e[type=#teil:players,distance=..300] if score @s OwnerUUID = @n[tag=AotsThrower] OwnerUUID run tag @s add F7.AgroWither
 
 damage @s 0.0001 player_attack by @n[tag=AotsThrower]
 data merge entity @s {HurtTime:0} 
 
-# damage apply
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= @n[tag=AotsThrower] Status.MeleeDamage
-# damage indicator
-scoreboard players operation #num Temporary = @n[tag=AotsThrower] Status.MeleeDamage
-execute if score @n[tag=AotsThrower] Status.MeleeDamage matches 1000.. run data modify storage lib: DamageDec.1k set value ","
-execute if score @n[tag=AotsThrower] Status.MeleeDamage matches 1000000.. run data modify storage lib: DamageDec.1m set value ","
-execute if score @n[tag=AotsThrower] Status.MeleeDamage matches 1000000000.. run data modify storage lib: DamageDec.1b set value ","
-data remove storage lib: DamageDec
-function system:api/number_converter/run
+# calc defense
+scoreboard players operation #damage Temporary = @n[tag=AotsThrower] Status.MeleeDamage
+scoreboard players operation #Temp Temporary = @s Status.Defense
+scoreboard players add #Temp Temporary 100
+scoreboard players operation #damage Temporary /= #Temp Temporary
+scoreboard players operation #damage Temporary *= #100 Constant
 
+# damage apply
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
+
+# damage indicator
+scoreboard players operation #num Temporary = #damage Temporary
+function system:api/number_converter/run
 #rng
  execute store result storage lib: random.x int 1 run random value 10..30
  execute store result storage lib: random.y int 1 run random value 10..500

@@ -3,15 +3,18 @@ damage @s 0.1 arrow by @p[tag=MeleeAttacker] from @p[tag=MeleeAttacker]
 # attack tag
 execute on attacker run tag @s add MeleeAttacker
 
+# calc defense
+scoreboard players operation #damage Temporary = @p[tag=MeleeAttacker] Status.MeleeDamage
+scoreboard players operation #Temp Temporary = @s Status.Defense
+scoreboard players add #Temp Temporary 100
+scoreboard players operation #damage Temporary /= #Temp Temporary
+scoreboard players operation #damage Temporary *= #100 Constant
+
 # damage apply
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= @p[tag=MeleeAttacker] Status.MeleeDamage
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
 
 # damage indicator
-scoreboard players operation #num Temporary = @p[tag=MeleeAttacker] Status.MeleeDamage
-execute if score @p[tag=MeleeAttacker] Status.MeleeDamage matches 1000.. run data modify storage lib: DamageDec.1k set value ","
-execute if score @p[tag=MeleeAttacker] Status.MeleeDamage matches 1000000.. run data modify storage lib: DamageDec.1m set value ","
-execute if score @p[tag=MeleeAttacker] Status.MeleeDamage matches 1000000000.. run data modify storage lib: DamageDec.1b set value ","
-data remove storage lib: DamageDec
+scoreboard players operation #num Temporary = #damage Temporary
 function system:api/number_converter/run
 
 #rng

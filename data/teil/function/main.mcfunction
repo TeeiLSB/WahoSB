@@ -32,6 +32,7 @@
 # bot tick
  function system:bot/tick
 
+
 # tick
  scoreboard players add $tick Tick 1
  execute if score $tick Tick matches 21 run scoreboard players set $tick Tick 1

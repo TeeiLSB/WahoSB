@@ -6,14 +6,26 @@ execute if entity @s[type=wither] run tag @p[tag=Beamer] add F7.AgroWither
 damage @s 0.0001 magic by @p[tag=Beamer]
 data merge entity @s {HurtTime:0} 
 
+
+
+# calc defense
+scoreboard players operation #damage Temporary = #DamageDealt Temporary
+scoreboard players operation #Temp Temporary = @s Status.Defense
+scoreboard players add #Temp Temporary 100
+scoreboard players operation #damage Temporary /= #Temp Temporary
+scoreboard players operation #damage Temporary *= #100 Constant
+
 # damage apply
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= @n[tag=Beamer] Status.MageBeamDamage
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
+scoreboard players operation #damage_hyperion Temporary = #damage Temporary
+execute if items entity @p[tag=Beamer] weapon.mainhand *[custom_data~{id:hyperion}] if entity @s[type=#teil:withers] run scoreboard players operation #damage_hyperion Temporary += #damage Temporary
+execute if items entity @p[tag=Beamer] weapon.mainhand *[custom_data~{id:hyperion}] if entity @s[type=#teil:withers] run execute if score #damage_hyperion Temporary matches ..-1 run scoreboard players set #damage_hyperion Temporary 2147483647
+execute if items entity @p[tag=Beamer] weapon.mainhand *[custom_data~{id:hyperion}] if entity @s[type=#teil:withers] run scoreboard players operation #damage Temporary /= #2 Constant
+execute if items entity @p[tag=Beamer] weapon.mainhand *[custom_data~{id:hyperion}] if entity @s[type=#teil:withers] run scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
+
+
 # damage indicator
-scoreboard players operation #num Temporary = @n[tag=Beamer] Status.MageBeamDamage
-execute if score @n[tag=Beamer] Status.MageBeamDamage matches 1000.. run data modify storage lib: DamageDec.1k set value ","
-execute if score @n[tag=Beamer] Status.MageBeamDamage matches 1000000.. run data modify storage lib: DamageDec.1m set value ","
-execute if score @n[tag=Beamer] Status.MageBeamDamage matches 1000000000.. run data modify storage lib: DamageDec.1b set value ","
-data remove storage lib: DamageDec
+scoreboard players operation #num Temporary = #damage_hyperion Temporary
 function system:api/number_converter/run
 
 #rng

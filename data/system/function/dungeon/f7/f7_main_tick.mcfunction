@@ -1,3 +1,9 @@
+# summon skeletons
+execute if score $F7tick Tick matches 200 run function system:dungeon/f7/p1/summon_skeletons
+
+
+
+
 
 # CrystalCount check
  execute unless score #CrystalCount.Old F7.Gimmick.Status = $CrystalCount F7.Gimmick.Status if score $CrystalCount F7.Gimmick.Status matches 1.. run title @a title ""
@@ -7,8 +13,8 @@
  execute unless score #CrystalCount.Old F7.Gimmick.Status = $CrystalCount F7.Gimmick.Status if score $CrystalCount F7.Gimmick.Status matches 2 run schedule function system:dungeon/f7/p1/crystal/place/laser_title 20t
  execute unless score #CrystalCount.Old F7.Gimmick.Status = $CrystalCount F7.Gimmick.Status run scoreboard players operation #CrystalCount.Old F7.Gimmick.Status = $CrystalCount F7.Gimmick.Status
 
-execute if score $CrystalCount F7.Gimmick.Status matches 1 run function system:dungeon/f7/p1/beacon_beam/when_crystal_1
-execute if score $CrystalCount F7.Gimmick.Status matches 2 run function system:dungeon/f7/p1/beacon_beam/when_crystal_2
+execute if score $F7tick Tick matches 200.. if score $CrystalCount F7.Gimmick.Status matches 1 run function system:dungeon/f7/p1/beacon_beam/when_crystal_1
+execute if score $F7tick Tick matches 200.. if score $CrystalCount F7.Gimmick.Status matches 2 run function system:dungeon/f7/p1/beacon_beam/when_crystal_2
 
 execute if score $tick Tick matches 10 run function system:dungeon/f7/p1/beacon_beam/floor_moving
 
