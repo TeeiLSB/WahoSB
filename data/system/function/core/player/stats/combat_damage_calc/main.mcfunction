@@ -3,6 +3,8 @@ function system:core/player/stats/combat_damage_calc/get_stats/basedamage
 function system:core/player/stats/combat_damage_calc/get_stats/critdamage
 function system:core/player/stats/combat_damage_calc/get_stats/strength
 function system:core/player/stats/combat_damage_calc/get_stats/intelligence
+function system:core/player/stats/combat_damage_calc/get_stats/abilitydamage
+function system:core/player/stats/combat_damage_calc/get_stats/baseabilitydamage
 
 # dungeon buff
 scoreboard players operation @s Status.Strength *= $Power Dungeon.Blessing
@@ -53,9 +55,10 @@ execute if score #DamageDealt Temporary matches ..-1 run scoreboard players set 
 scoreboard players operation @s Status.MeleeDamage = #DamageDealt Temporary
 scoreboard players operation @s Status.ArrowDamage = #DamageDealt Temporary
 
+function system:core/player/stats/combat_damage_calc/magic
 
 execute if entity @s[tag=Dungeon.Class.Mage] run function system:core/player/stats/combat_damage_calc/mage_beam
 
 
 # status check actionbar
-title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}}]
+title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}},"      §c=ABD ",{"score":{"name":"@s","objective":"Status.AbilityDamage"}},"      §a=BAD ",{"score":{"name":"@s","objective":"Status.BaseAbilityDamage"}},"      §a=MGD ",{"score":{"name":"@s","objective":"Status.MagicDamage"}}]

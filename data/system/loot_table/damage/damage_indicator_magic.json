@@ -1,0 +1,116 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "barrier",
+          "functions": [
+            {
+              "function": "set_custom_data",
+              "tag": "{dmg_ind:1b}"
+            },
+            {
+              "function": "set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "score": {
+                    "name": "#d1b",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                    "nbt": "DamageDec.1b",
+                   "storage": "lib:",
+                   "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d100m",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d10m",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d1m",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                    "nbt": "DamageDec.1m",
+                   "storage": "lib:",
+                   "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d100k",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d10k",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d1k",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                    "nbt": "DamageDec.1k",
+                   "storage": "lib:",
+                   "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d100",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d10",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                },
+                {
+                  "score": {
+                    "name": "#d1",
+                    "objective": "Temporary"
+                  },
+                  "color": "gray"
+                }
+              ]
+            },
+            {
+                "function": "minecraft:set_components",
+                "components": {
+                    "item_model": "custom/misc/nothing"
+                }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

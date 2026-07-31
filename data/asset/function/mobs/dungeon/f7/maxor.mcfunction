@@ -4,5 +4,5 @@ effect give @s resistance infinite 255 true
 tag @s add Mob.Dungeon.Boss.Maxor
 tag @s add CantAutoKill
 tag @s add F7.Reset
-scoreboard players set @s Status.Defense 1000
-scoreboard players set @s Status.Health 1000000000
+scoreboard players set @s Status.Defense 0
+scoreboard players set @s Status.Health 100000000

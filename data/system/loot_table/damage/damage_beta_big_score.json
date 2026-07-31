@@ -1,0 +1,79 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "barrier",
+          "functions": [
+            {
+              "function": "set_custom_data",
+              "tag": "{dmg_ind:1b}"
+            },
+            {
+              "function": "set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "text": "✧",
+                  "color": "white"
+                },
+                {
+                  "score": {
+                    "name": "$BS.B",
+                    "objective": "BigScore"
+                  },
+                  "color": "white"
+                },
+                {
+                  "text": ",",
+                  "color": "yellow"
+                },
+                {
+                  "score": {
+                    "name": "$BS.M",
+                    "objective": "BigScore"
+                  },
+                  "color": "gold"
+                },
+                {
+                  "text": ",",
+                  "color": "red"
+                },
+                {
+                  "score": {
+                    "name": "$BS.K",
+                    "objective": "BigScore"
+                  },
+                  "color": "white"
+                },
+                {
+                  "text": ",",
+                  "color": "yellow"
+                },
+                {
+                  "score": {
+                    "name": "$BS",
+                    "objective": "BigScore"
+                  },
+                  "color": "gold"
+                },
+                {
+                  "text": "✧",
+                  "color": "red"
+                }
+              ]
+            },
+            {
+                "function": "minecraft:set_components",
+                "components": {
+                    "item_model": "custom/misc/nothing"
+                }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

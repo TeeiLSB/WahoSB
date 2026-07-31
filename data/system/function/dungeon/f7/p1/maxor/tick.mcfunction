@@ -24,8 +24,8 @@ execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 
 execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run tag @s add Invulnerable
 
 # HPが25m以下になったらenrageさせる
-execute if score $CrystalCount F7.Gimmick.Status matches 2 unless score $MaxorPhase F7.Gimmick.Status matches 1 if score @s Status.Health matches ..250000000 run function system:dungeon/f7/p1/maxor/25m_trigger
-execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health 250000000
+execute if score $CrystalCount F7.Gimmick.Status matches 2 unless score $MaxorPhase F7.Gimmick.Status matches 1 if score @s Status.Health matches ..25000000 run function system:dungeon/f7/p1/maxor/25m_trigger
+execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health 25000000
 # しんだ
 execute if score @s Status.Health matches ..1 run function system:dungeon/f7/p1/maxor/death_trigger
 
@@ -36,7 +36,7 @@ execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard player
 
 # bossbar
 scoreboard players operation #BossHPRate Temporary = @s Status.Health
-scoreboard players operation #BossHPRate Temporary /= #10000000 Constant
+scoreboard players operation #BossHPRate Temporary /= #1000000 Constant
 execute store result bossbar wahosb:f7 value run scoreboard players get #BossHPRate Temporary
 scoreboard players reset #BossHPRate Temporary
 

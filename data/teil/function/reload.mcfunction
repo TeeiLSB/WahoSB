@@ -41,7 +41,6 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.Ferocity dummy
  scoreboard objectives add Status.ArrowDamage dummy
  scoreboard objectives add Dungeon.Class.Mage.BeamRange dummy
- scoreboard objectives add Status.MageBeamDamage dummy
  scoreboard objectives add Status.AttackSpeed dummy
  scoreboard objectives add Player.AttackCooldown dummy
  scoreboard objectives add Tick dummy
@@ -63,6 +62,23 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.WeaponDamage dummy
  scoreboard objectives add Status.Intelligence dummy
  scoreboard objectives add Status.BaseDamage dummy
+ scoreboard objectives add Status.AbilityDamage dummy
+ scoreboard objectives add Status.BaseAbilityDamage dummy
+ scoreboard objectives add Status.MagicDamage dummy
+
+# big score
+  scoreboard objectives add Status.MageBeamDamage dummy
+ scoreboard objectives add Status.MageBeamDamage.k dummy
+ scoreboard objectives add Status.MageBeamDamage.m dummy
+ scoreboard objectives add Status.MageBeamDamage.b dummy
+
+ #hp
+ scoreboard objectives add Status.Health.b dummy
+ scoreboard objectives add Status.Health.m dummy
+ scoreboard objectives add Status.Health.k dummy
+ scoreboard objectives add Status.Health dummy
+
+ scoreboard objectives add BigScore dummy
 
  # mob status
  scoreboard objectives add Status.MobAttackDamage dummy
