@@ -1,3 +1,7 @@
+# debug !!
+execute if entity @s[tag=CantAutoKill] run data modify entity @s Glowing set value 1b
+execute if entity @s[tag=!CantAutoKill] run data modify entity @s Glowing set value 0b
+
 # なんかバリアみたいなのなくす
 execute store result score #maxorhealth Temporary run data get entity @s Health
 execute if score #maxorhealth Temporary matches ..151 run data modify entity @s Health set value 300f
@@ -23,11 +27,26 @@ execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 
 execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 if entity @s[distance=..2] run scoreboard players set #MaxorHittedLaser F7.Gimmick.Status 1
 execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run tag @s add Invulnerable
 
-# HPが25m以下になったらenrageさせる
-execute if score $CrystalCount F7.Gimmick.Status matches 2 unless score $MaxorPhase F7.Gimmick.Status matches 1 if score @s Status.Health matches ..25000000 run function system:dungeon/f7/p1/maxor/25m_trigger
-execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health 25000000
-# しんだ
-execute if score @s Status.Health matches ..1 run function system:dungeon/f7/p1/maxor/death_trigger
+# 25m以下だよ!!
+    # hp比較
+    function system:api/big_score/compare/first {"l_as":"@s","l_obj":"Status.Health","b":"0","m":"25","k":"0","n":"0"}
+    # まだenrageしてなくて25以下だったらenrageを1にする
+    execute if score $MaxorEnraged F7.Gimmick.Status matches 0 unless score $MaxorPhase F7.Gimmick.Status matches 1 if score #CompareResult BigScore matches ..0 run function system:dungeon/f7/p1/maxor/25m_trigger
+    # enrageが1だったらhpを25mに固定
+    execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health.b 0
+    execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health.m 25
+    execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health.k 0
+    execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health 0
+    # hpを更新
+    function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
+
+# 死んだよ(泣)
+    # hp比較
+    function system:api/big_score/compare/first {"l_as":"@s","l_obj":"Status.Health","b":"0","m":"0","k":"0","n":"0"}
+    # 0以下だったら死んだときの処理 (Phaseが1のときのみ(phaseは25mtriggerで1になってるはずー))
+    execute if score $MaxorPhase F7.Gimmick.Status matches 1 if score #CompareResult BigScore matches ..0 run function system:dungeon/f7/p1/maxor/death_trigger
+
+
 
 
 
@@ -35,8 +54,7 @@ execute if score @s Status.Health matches ..1 run function system:dungeon/f7/p1/
 execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players reset #MaxorHittedLaser F7.Gimmick.Status
 
 # bossbar
-scoreboard players operation #BossHPRate Temporary = @s Status.Health
-scoreboard players operation #BossHPRate Temporary /= #1000000 Constant
+scoreboard players operation #BossHPRate Temporary = @s Status.Health.m
 execute store result bossbar wahosb:f7 value run scoreboard players get #BossHPRate Temporary
 scoreboard players reset #BossHPRate Temporary
 

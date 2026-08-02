@@ -7,3 +7,5 @@ execute as @a[tag=Dungeon.Class.Mage] at @s run function system:dungeon/class/ma
 # bot
  execute as @e[type=mannequin,tag=Bot,tag=Bot.Berserk] at @s run function system:dungeon/f7/bot/berserk/tick
  execute as @e[type=mannequin,tag=Bot,tag=Bot.Mage] at @s run function system:dungeon/f7/bot/mage/tick
+ execute as @e[type=mannequin,tag=Bot,tag=Bot.Tank] at @s run function system:dungeon/f7/bot/tank/tick
+ execute as @e[type=mannequin,tag=Bot,tag=Bot.Archer] at @s run function system:dungeon/f7/bot/archer/tick

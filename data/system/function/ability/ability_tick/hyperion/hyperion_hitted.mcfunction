@@ -10,8 +10,6 @@ scoreboard players add #Temp Temporary 100
 scoreboard players operation #damage Temporary /= #Temp Temporary
 scoreboard players operation #damage Temporary *= #100 Constant
 
-# damage apply
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
 
 # damage indicator
 scoreboard players operation #num Temporary = #damage Temporary
@@ -29,6 +27,11 @@ execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:1b}}}},distance=0] positioned ~ ~-0.3 ~ run function system:ability/bow/terminator/arrow/wow/random_tp with storage lib: random
 data remove storage lib: dmg
 data remove storage lib: random
+
+
+# damage apply
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
+function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
 
 
 scoreboard players reset #CurrentHealth Temporary

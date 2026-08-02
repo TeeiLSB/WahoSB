@@ -7,10 +7,10 @@ scoreboard players reset $CrystalCount
 title @a title ""
 title @a subtitle "§c⚠ Maxor is Enraged! ⚠"
 
-scoreboard players set @s Status.Health 25000000
 
 scoreboard players set $MaxorEnraged F7.Gimmick.Status 1
 scoreboard players set $MaxorPhase F7.Gimmick.Status 1
+
 
 # beacon reset
  setblock 73 222 73 black_stained_glass

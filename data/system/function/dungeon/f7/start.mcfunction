@@ -11,9 +11,12 @@
  tag @e remove F7.AgroWither
 
  tp @a 73.5 221 13.5 0 0
+ #bot!!
  execute positioned 73.5 221 13.5 run function system:bot/summon/berserk/summon
  execute positioned 73.5 221 13.5 run function system:bot/summon/mage/summon
- execute as @a at @s run spectate @n[tag=Bot.Berserk] @s
+ execute positioned 73.5 221 13.5 run function system:bot/summon/tank/summon
+ execute positioned 73.5 221 13.5 run function system:bot/summon/archer/summon
+
 
 # bossbar
  # clear previous one
@@ -39,7 +42,7 @@
 clone 69 220 152 77 220 169 69 220 32
 
 # summon maxor
-# execute positioned 73 228 53 summon wither run function asset:mobs/dungeon/f7/maxor
+ execute positioned 73 228 53 summon wither run function asset:mobs/dungeon/f7/maxor
 
 
 

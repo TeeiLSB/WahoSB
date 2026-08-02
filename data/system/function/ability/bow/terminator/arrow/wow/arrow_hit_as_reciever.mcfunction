@@ -11,8 +11,6 @@ scoreboard players add #Temp Temporary 100
 scoreboard players operation #damage Temporary /= #Temp Temporary
 scoreboard players operation #damage Temporary *= #100 Constant
 
-# damage apply
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
 
 # damage indicator
 scoreboard players operation #num Temporary = #damage Temporary
@@ -31,9 +29,13 @@ execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{dmg_ind:
 data remove storage lib: dmg
 data remove storage lib: random
 
-
 scoreboard players reset #CurrentHealth Temporary
 scoreboard players reset #Damage Temporary
+
+
+# damage apply
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
+function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
 
 # bouncy
 execute store result score #rng Temporary run random value 0..1

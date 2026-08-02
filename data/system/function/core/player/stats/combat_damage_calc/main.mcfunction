@@ -6,16 +6,16 @@ function system:core/player/stats/combat_damage_calc/get_stats/intelligence
 function system:core/player/stats/combat_damage_calc/get_stats/abilitydamage
 function system:core/player/stats/combat_damage_calc/get_stats/baseabilitydamage
 
+# some stats str! (foraging,gdrag)
+scoreboard players add @s Status.Strength 300
+
+# some stats int! (enchant,alchemy)
+scoreboard players add @s Status.Strength 400
+
+
 # dungeon buff
-scoreboard players operation @s Status.Strength *= $Power Dungeon.Blessing
-scoreboard players operation @s Status.Strength /= #10 Constant
-
-scoreboard players operation @s Status.CritDamage *= $Power Dungeon.Blessing
-scoreboard players operation @s Status.CritDamage /= #10 Constant
-
-scoreboard players operation @s Status.Intelligence *= $Wisdom Dungeon.Blessing
-scoreboard players operation @s Status.Intelligence /= #10 Constant
-
+function system:dungeon/blessing/power
+function system:dungeon/blessing/wisdom
 
 # base damage +5
 scoreboard players operation #DamageDealt Temporary = @s Status.WeaponDamage
@@ -61,4 +61,4 @@ execute if entity @s[tag=Dungeon.Class.Mage] run function system:core/player/sta
 
 
 # status check actionbar
-title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}},"      §c=ABD ",{"score":{"name":"@s","objective":"Status.AbilityDamage"}},"      §a=BAD ",{"score":{"name":"@s","objective":"Status.BaseAbilityDamage"}},"      §a=MGD ",{"score":{"name":"@s","objective":"Status.MagicDamage"}}]
+title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage.b"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage.m"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage.k"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}},"      §c=ABD ",{"score":{"name":"@s","objective":"Status.AbilityDamage"}},"      §a=BAD ",{"score":{"name":"@s","objective":"Status.BaseAbilityDamage"}},"      §a=MGD ",{"score":{"name":"@s","objective":"Status.MagicDamage"}}]

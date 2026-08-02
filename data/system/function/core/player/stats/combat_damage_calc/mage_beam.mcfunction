@@ -9,47 +9,55 @@ scoreboard players operation #Scale Temporary = @s Status.Intelligence
 scoreboard players operation #Scale Temporary *= #9 Constant
 scoreboard players operation #Scale Temporary += #3000 Constant
 
-# Mage Beam Weapon Damage
-scoreboard players operation #MageBeamWeaponDamage Temporary = #WeaponDamage Temporary
-scoreboard players operation #MageBeamWeaponDamage Temporary *= #Scale Temporary
-scoreboard players operation #MageBeamWeaponDamage Temporary /= #10000 Constant
-
 # convert to per digit score
 scoreboard players operation #Converter BigScore = #WeaponDamage Temporary
 function system:api/big_score/converter/convert_to_big
-scoreboard players operation $BS.B BigScore *= #Scale Temporary
-scoreboard players operation $BS.B BigScore /= #10000 Constant
 
-scoreboard players operation $BS.M BigScore *= #Scale Temporary
-scoreboard players operation $BS.M BigScore /= #10000 Constant
 
-scoreboard players operation $BS.K BigScore *= #Scale Temporary
-scoreboard players operation $BS.K BigScore /= #10000 Constant
+# magebeam basedamage calc
+scoreboard players operation #MultiplyBy BigScore = #Scale Temporary
+function system:api/big_score/math/multiply
+scoreboard players operation #DividedBy BigScore = #10000 Constant
+function system:api/big_score/math/divide
 
-scoreboard players operation $BS BigScore *= #Scale Temporary
-scoreboard players operation $BS BigScore /= #10000 Constant
 
 # str
-scoreboard players operation $BS.B BigScore *= #STR Temporary
-scoreboard players operation $BS.M BigScore *= #STR Temporary
-scoreboard players operation $BS.K BigScore *= #STR Temporary
-scoreboard players operation $BS BigScore *= #STR Temporary
+scoreboard players operation #MultiplyBy BigScore = #STR Temporary
+function system:api/big_score/math/multiply
 
-# combat 60
-scoreboard players operation $BS.B BigScore *= #2 Constant
-scoreboard players operation $BS.M BigScore *= #2 Constant
-scoreboard players operation $BS.K BigScore *= #2 Constant
-scoreboard players operation $BS BigScore *= #2 Constant
+# enchantments sharp7 smite7 proscute6 firststrike5 = 50%+50%+100%+125% = 325% + combat 60 =210% ~~~ ==== 535%
+scoreboard players operation #MultiplyBy BigScore = #107 Constant
+function system:api/big_score/math/multiply
+scoreboard players operation #DividedBy BigScore = #20 Constant
+function system:api/big_score/math/divide
+
+
 
 # crit
-scoreboard players operation $BS.B BigScore *= #CD Temporary
-scoreboard players operation $BS.M BigScore *= #CD Temporary
-scoreboard players operation $BS.K BigScore *= #CD Temporary
-scoreboard players operation $BS BigScore *= #CD Temporary
+scoreboard players operation #MultiplyBy BigScore = #CD Temporary
+function system:api/big_score/math/multiply
 
+
+execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run scoreboard players set #MultiplyBy BigScore 3
+execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run function system:api/big_score/math/multiply
+execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run scoreboard players set #DividedBy BigScore 2
+execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run function system:api/big_score/math/divide
+
+# gdrag
+
+scoreboard players operation #MultiplyBy BigScore = #3 Constant
+function system:api/big_score/math/multiply
+scoreboard players operation #DividedBy BigScore = #2 Constant
+function system:api/big_score/math/divide
 
 
 function system:api/big_score/normalize/run
+function system:api/big_score/normalize/run
+function system:api/big_score/normalize/run
+function system:api/big_score/normalize/run
+function system:api/big_score/normalize/run
+function system:api/big_score/normalize/run
+
 scoreboard players operation @s Status.MageBeamDamage.b = $BS.B BigScore
 scoreboard players operation @s Status.MageBeamDamage.m = $BS.M BigScore
 scoreboard players operation @s Status.MageBeamDamage.k = $BS.K BigScore

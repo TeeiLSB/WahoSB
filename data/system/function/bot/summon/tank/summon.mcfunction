@@ -1,0 +1,1 @@
+execute summon mannequin run function system:bot/summon/tank/init
