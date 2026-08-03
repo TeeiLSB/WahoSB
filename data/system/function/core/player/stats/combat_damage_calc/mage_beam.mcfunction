@@ -52,16 +52,16 @@ function system:api/big_score/math/divide
 
 
 function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
+
+
+
 
 scoreboard players operation @s Status.MageBeamDamage.b = $BS.B BigScore
 scoreboard players operation @s Status.MageBeamDamage.m = $BS.M BigScore
 scoreboard players operation @s Status.MageBeamDamage.k = $BS.K BigScore
 scoreboard players operation @s Status.MageBeamDamage = $BS BigScore
+
+
 #function system:api/big_score/converter/reset_scores
 
 #execute if score #DamageDealt Temporary matches ..-1 run scoreboard players set #DamageDealt Temporary 2147483647

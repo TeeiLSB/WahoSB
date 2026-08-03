@@ -12,10 +12,10 @@
 
  tp @a 73.5 221 13.5 0 0
  #bot!!
- execute positioned 73.5 221 13.5 run function system:bot/summon/berserk/summon
- execute positioned 73.5 221 13.5 run function system:bot/summon/mage/summon
- execute positioned 73.5 221 13.5 run function system:bot/summon/tank/summon
- execute positioned 73.5 221 13.5 run function system:bot/summon/archer/summon
+ execute unless entity @a[tag=Dungeon.Class.Berserk] positioned 73.5 221 13.5 run function system:bot/summon/berserk/summon
+ execute unless entity @a[tag=Dungeon.Class.Mage] positioned 73.5 221 13.5 run function system:bot/summon/mage/summon
+ execute unless entity @a[tag=Dungeon.Class.Tank] positioned 73.5 221 13.5 run function system:bot/summon/tank/summon
+ execute unless entity @a[tag=Dungeon.Class.Archer] positioned 73.5 221 13.5 run function system:bot/summon/archer/summon
 
 
 # bossbar
@@ -25,8 +25,8 @@
   bossbar add wahosb:f7 {"text":"§e《§cMaxor§e》"}
   bossbar set wahosb:f7 players @a
   bossbar set wahosb:f7 color yellow
-  bossbar set wahosb:f7 max 100
-  bossbar set wahosb:f7 value 100
+  bossbar set wahosb:f7 max 1000
+  bossbar set wahosb:f7 value 1000
 
 # beacon reset
  setblock 73 222 73 black_stained_glass

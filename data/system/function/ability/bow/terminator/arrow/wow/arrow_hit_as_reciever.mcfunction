@@ -39,7 +39,7 @@ function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
 
 # bouncy
 execute store result score #rng Temporary run random value 0..1
-execute if entity @s[tag=!Invulnerable] if score #rng Temporary matches 1 run tag @e[distance=0.1..6,type=!player,type=!item,type=!marker,type=!arrow,type=!armor_stand,limit=1,sort=random] add BouncyTarget
+execute if entity @s[tag=!Invulnerable] if score #rng Temporary matches 0..1 run tag @e[distance=0.1..6,type=!mannequin,type=!item_display, type=!player,type=!item,type=!marker,type=!arrow,type=!armor_stand,limit=1,sort=random] add BouncyTarget
 execute at @s positioned ~ ~1 ~ facing entity @n[tag=BouncyTarget] eyes summon arrow run function system:ability/bow/terminator/arrow/wow/init
 tag @e remove BouncyTarget
 

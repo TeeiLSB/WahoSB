@@ -1,0 +1,40 @@
+{
+  "description": "foo",
+  "supported_items": [
+    "recovery_compass"
+  ],
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 0,
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "direct_entity": {
+              "type": "#minecraft:arrows"
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "system:ability/bow/terminator/arrow/wow/arrow_hit_as_reciever"
+        },
+        "enchanted": "victim",
+        "affected": "victim"
+      }
+    ]
+  }
+}

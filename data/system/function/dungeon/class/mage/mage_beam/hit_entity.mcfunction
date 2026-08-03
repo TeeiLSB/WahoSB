@@ -6,10 +6,32 @@ execute if entity @s[type=wither] run tag @p[tag=Beamer] add F7.AgroWither
 damage @s 0.0001 magic by @p[tag=Beamer]
 data merge entity @s {HurtTime:0} 
 
-scoreboard players operation @s[tag=!Invulnerable] Status.Health.b -= @p[tag=Beamer] Status.MageBeamDamage.b
-scoreboard players operation @s[tag=!Invulnerable] Status.Health.m -= @p[tag=Beamer] Status.MageBeamDamage.m
-scoreboard players operation @s[tag=!Invulnerable] Status.Health.k -= @p[tag=Beamer] Status.MageBeamDamage.k
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= @p[tag=Beamer] Status.MageBeamDamage
+
+
+
+scoreboard players operation $BS.B BigScore = @p[tag=Beamer] Status.MageBeamDamage.b
+scoreboard players operation $BS.M BigScore = @p[tag=Beamer] Status.MageBeamDamage.m
+scoreboard players operation $BS.K BigScore = @p[tag=Beamer] Status.MageBeamDamage.k
+scoreboard players operation $BS BigScore = @p[tag=Beamer] Status.MageBeamDamage
+
+scoreboard players operation #DividedBy BigScore = @s Status.Defense
+scoreboard players operation #DividedBy BigScore += #100 Constant
+function system:api/big_score/math/divide
+
+scoreboard players set #MultiplyBy BigScore 100
+function system:api/big_score/math/multiply
+
+execute if entity @s[tag=Mob.Boss] run scoreboard players set #DividedBy BigScore 10
+execute if entity @s[tag=Mob.Boss] run function system:api/big_score/math/divide
+
+
+
+
+
+scoreboard players operation @s[tag=!Invulnerable] Status.Health.b -= $BS.B BigScore
+scoreboard players operation @s[tag=!Invulnerable] Status.Health.m -= $BS.M BigScore
+scoreboard players operation @s[tag=!Invulnerable] Status.Health.k -= $BS.K BigScore
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= $BS BigScore
 
 #rng
  execute store result storage lib: random.x int 1 run random value 10..30
@@ -33,6 +55,3 @@ title @a subtitle ["§c",{"score":{"name":"@s","objective":"Status.Health.b"}},"
 
 # これはbig scoreのやつ！！！
 function system:api/big_score/converter/reset_scores
-
-scoreboard players reset #CurrentHealth Temporary
-scoreboard players reset #Damage Temporary

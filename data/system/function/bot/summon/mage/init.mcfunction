@@ -20,6 +20,8 @@ tag @s add Invulnerable
 tag @s add Bot.Mage
 tag @s add Bot
 
+tag @s add Dungeon.Class.Mage
+
 team join Mage
 
 item replace entity @s armor.head with player_head[profile={properties:[{name:"textures",\

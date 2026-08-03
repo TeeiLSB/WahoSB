@@ -4,10 +4,6 @@ $scoreboard players operation $BS.K BigScore = $(as) $(obj).k
 $scoreboard players operation $BS BigScore = $(as) $(obj)
 
 function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
-function system:api/big_score/normalize/run
 
 $scoreboard players operation $(as) $(obj).b = $BS.B BigScore
 $scoreboard players operation $(as) $(obj).m = $BS.M BigScore

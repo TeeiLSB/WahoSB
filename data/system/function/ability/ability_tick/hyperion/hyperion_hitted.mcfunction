@@ -1,8 +1,5 @@
 damage @s 0.1 magic by @n[tag=This]
 
-# attack tag
-execute on attacker run tag @s add MeleeAttacker
-
 # calc defense
 scoreboard players operation #damage Temporary = @n[tag=This] Status.MagicDamage
 scoreboard players operation #Temp Temporary = @s Status.Defense

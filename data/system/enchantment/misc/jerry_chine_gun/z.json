@@ -24,13 +24,13 @@
             {
         "effect": {
           "type": "run_function",
-          "function": "system:ability/ability_tick/bonzo_staff/rotate"
+          "function": "system:ability/ability_tick/jerry_chine_gun/rotate"
         }
       },
       {
         "effect": {
           "type": "minecraft:apply_impulse",
-          "direction": [0.0, 0.1, 0],
+          "direction": [0.0, 0.0, -0.1],
           "coordinate_scale": [1.0, 1.0, 1.0],
           "magnitude": {
             "type": "minecraft:linear",
@@ -42,7 +42,7 @@
       {
         "effect": {
           "type": "run_function",
-          "function": "system:ability/ability_tick/bonzo_staff/clear"
+          "function": "system:ability/ability_tick/jerry_chine_gun/clear"
         }
       }
     ]

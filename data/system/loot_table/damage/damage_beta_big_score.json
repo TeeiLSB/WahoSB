@@ -21,8 +21,8 @@
                 },
                 {
                   "score": {
-                    "name": "@p[tag=Beamer]",
-                    "objective": "Status.MageBeamDamage.b"
+                    "name": "$BS.B",
+                    "objective": "BigScore"
                   },
                   "color": "white"
                 },
@@ -32,8 +32,8 @@
                 },
                 {
                   "score": {
-                    "name": "@p[tag=Beamer]",
-                    "objective": "Status.MageBeamDamage.m"
+                    "name": "$BS.M",
+                    "objective": "BigScore"
                   },
                   "color": "gold"
                 },
@@ -43,8 +43,8 @@
                 },
                 {
                   "score": {
-                    "name": "@p[tag=Beamer]",
-                    "objective": "Status.MageBeamDamage.k"
+                    "name": "$BS.K",
+                    "objective": "BigScore"
                   },
                   "color": "white"
                 },
@@ -54,8 +54,8 @@
                 },
                 {
                   "score": {
-                    "name": "@p[tag=Beamer]",
-                    "objective": "Status.MageBeamDamage"
+                    "name": "$BS",
+                    "objective": "BigScore"
                   },
                   "color": "gold"
                 },

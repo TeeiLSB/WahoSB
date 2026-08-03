@@ -15,3 +15,4 @@ swing @s mainhand
 
 scoreboard players set @s Bot.IsInAction 0
 scoreboard players add @s Bot.ActionProcess 1
+

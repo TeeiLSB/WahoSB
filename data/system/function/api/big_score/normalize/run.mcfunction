@@ -30,5 +30,8 @@ scoreboard players operation $BS BigScore = #calc BigScore
 
 
 # Bの繰り上げはだめ (Tがないから)
-
 execute if score $BS.B BigScore matches 1000.. run scoreboard players set $BS.B BigScore 999
+
+execute if score $BS.M BigScore matches 1000.. run function system:api/big_score/normalize/run
+execute if score $BS.K BigScore matches 1000.. run function system:api/big_score/normalize/run
+execute if score $BS BigScore matches 1000.. run function system:api/big_score/normalize/run

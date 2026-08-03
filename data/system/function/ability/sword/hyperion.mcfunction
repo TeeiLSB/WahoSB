@@ -14,7 +14,7 @@ execute if score @s CD.default matches 0 unless score @s CD.hyperion matches 1..
 execute if score @s CD.default matches 0 unless score @s CD.hyperion matches 1.. run scoreboard players set @s CD.hyperion 100
 
 # 暴発防止
-execute if score @s CD.default matches 0 run scoreboard players set @s CD.default 3
+execute if score @s CD.default matches 0 run scoreboard players set @s CD.default 4
 
 
 # reset

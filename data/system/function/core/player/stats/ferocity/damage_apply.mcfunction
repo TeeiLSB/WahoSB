@@ -3,7 +3,7 @@ damage @s 0.1 magic
 data modify entity @s HurtTime set value 0
 
 # calc defense
-scoreboard players operation #damage Temporary = @s Status.ArrowDamage
+scoreboard players operation #damage Temporary = @s Ferocity_Damage
 scoreboard players operation #Temp Temporary = @s Status.Defense
 scoreboard players add #Temp Temporary 100
 scoreboard players operation #damage Temporary /= #Temp Temporary
@@ -11,6 +11,7 @@ scoreboard players operation #damage Temporary *= #100 Constant
 
 # damage apply
 scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
+function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
 
 # damage indicator
 scoreboard players operation #num Temporary = #damage Temporary

@@ -1,5 +1,5 @@
 # summon skeletons
-#execute if score $F7tick Tick matches 160 run function system:dungeon/f7/p1/summon_skeletons
+execute if score $F7tick Tick matches 160 run function system:dungeon/f7/p1/summon_skeletons
 
 # lava bounce
 scoreboard players remove @a[scores={F7.LavaBounce.CD=1..}] F7.LavaBounce.CD 1

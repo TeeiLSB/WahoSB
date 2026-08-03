@@ -5,8 +5,8 @@ effect give @s fire_resistance infinite 255 true
 
 attribute @s knockback_resistance base set 1000
 
-scoreboard players set @s Status.MeleeDamage 1000000
-
+scoreboard players set @s Status.ArrowDamage 80000000
+scoreboard players set @s Status.MeleeDamage 2000000
 # goal marker ID
 execute store result score @s Bot.GoalMarkerID run data get entity @s UUID[0]
 
@@ -21,6 +21,8 @@ tag @s add F7.Reset
 tag @s add Invulnerable
 tag @s add Bot.Tank
 tag @s add Bot
+
+tag @s add Dungeon.Class.Tank
 
 team join Tank
 

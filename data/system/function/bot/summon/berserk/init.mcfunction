@@ -20,6 +20,8 @@ tag @s add Invulnerable
 tag @s add Bot.Berserk
 tag @s add Bot
 
+tag @s add Dungeon.Class.Berserk
+
 team join Berserk
 
 item replace entity @s armor.head with player_head\

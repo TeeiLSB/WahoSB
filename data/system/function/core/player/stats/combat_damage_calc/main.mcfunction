@@ -9,8 +9,6 @@ function system:core/player/stats/combat_damage_calc/get_stats/baseabilitydamage
 # some stats str! (foraging,gdrag)
 scoreboard players add @s Status.Strength 300
 
-# some stats int! (enchant,alchemy)
-scoreboard players add @s Status.Strength 400
 
 
 # dungeon buff
@@ -51,11 +49,15 @@ scoreboard players reset #gdrag Temporary
 
 execute if score #DamageDealt Temporary matches ..-1 run scoreboard players set #DamageDealt Temporary 2147483647
 
+execute if entity @s[tag=Dungeon.Class.Archer] run scoreboard players operation #DamageDealt Temporary *= #7 Constant
+execute if entity @s[tag=Dungeon.Class.Archer] run scoreboard players operation #DamageDealt Temporary /= #5 Constant
+
 # apply
 scoreboard players operation @s Status.MeleeDamage = #DamageDealt Temporary
 scoreboard players operation @s Status.ArrowDamage = #DamageDealt Temporary
 
 function system:core/player/stats/combat_damage_calc/magic
+
 
 execute if entity @s[tag=Dungeon.Class.Mage] run function system:core/player/stats/combat_damage_calc/mage_beam
 
