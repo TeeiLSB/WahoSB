@@ -1,0 +1,70 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:recovery_compass",
+					"conditions": [],
+					"functions": [
+						{
+							"function": "minecraft:set_item",
+							"item": "minecraft:recovery_compass"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "custom/bow/bow"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"strings": {
+								"values": [
+									"terminator"
+								],
+								"mode": "replace_all"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{WeaponType:bow,Name:Terminator,Rarity:5,Stats:{BaseDamage:310,Strength:50,CritDamage:250,AttackSpeed:40}}"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:piercing_weapon": {
+									"deals_knockback": false,
+									"dismounts": false,
+									"sound": "minecraft:intentionally_empty",
+									"hit_sound": "minecraft:intentionally_empty"
+								}
+							}
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:consumable": {
+									"consume_seconds": 2147483647,
+									"animation": "none",
+									"sound": "minecraft:intentionally_empty",
+									"has_consume_particles": false
+								}
+							}
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:use_effects": {
+									"can_sprint": true,
+									"speed_multiplier": 1
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

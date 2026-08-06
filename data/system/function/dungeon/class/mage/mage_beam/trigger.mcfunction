@@ -9,4 +9,4 @@ execute if score @s Player.AttackCooldown matches 0 if score @s Status.AttackSpe
 execute if score @s Player.AttackCooldown matches 0 if score @s Status.AttackSpeed matches 34..53 run scoreboard players set @s Player.AttackCooldown 7
 execute if score @s Player.AttackCooldown matches 0 if score @s Status.AttackSpeed matches 18..33 run scoreboard players set @s Player.AttackCooldown 8
 execute if score @s Player.AttackCooldown matches 0 if score @s Status.AttackSpeed matches 6..17 run scoreboard players set @s Player.AttackCooldown 9
-execute if score @s Player.AttackCooldown matches 0 if score @s Status.AttackSpeed matches 0..5 run scoreboard players set @s Player.AttackCooldown 10
+execute if score @s Player.AttackCooldown matches 0 if score @s Status.AttackSpeed matches ..5 run scoreboard players set @s Player.AttackCooldown 10

@@ -50,8 +50,8 @@ tag @s remove Hit.This
 function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
 
 
-title @a title ""
-title @a subtitle ["§c",{"score":{"name":"@s","objective":"Status.Health.b"}},",",{"score":{"name":"@s","objective":"Status.Health.m"}},",",{"score":{"name":"@s","objective":"Status.Health.k"}},",",{"score":{"name":"@s","objective":"Status.Health"}}, "HP!"]
+#title @a title ""
+#title @a subtitle ["§c",{"score":{"name":"@s","objective":"Status.Health.b"}},",",{"score":{"name":"@s","objective":"Status.Health.m"}},",",{"score":{"name":"@s","objective":"Status.Health.k"}},",",{"score":{"name":"@s","objective":"Status.Health"}}, "HP!"]
 
 # これはbig scoreのやつ！！！
 function system:api/big_score/converter/reset_scores

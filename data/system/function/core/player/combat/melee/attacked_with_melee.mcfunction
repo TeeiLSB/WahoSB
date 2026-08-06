@@ -1,7 +1,10 @@
-damage @s 0.1 arrow by @p[tag=MeleeAttacker] from @p[tag=MeleeAttacker]
 
 # attack tag
 execute on attacker run tag @s add MeleeAttacker
+
+damage @s 0.1 arrow by @p[tag=MeleeAttacker] from @p[tag=MeleeAttacker]
+
+data merge entity @s {HurtTime:0}
 
 # calc defense
 scoreboard players operation #damage Temporary = @p[tag=MeleeAttacker] Status.MeleeDamage

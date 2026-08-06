@@ -2,6 +2,7 @@
 data merge entity @s {HurtTime:0} 
 
 
+
 execute on attacker run tag @s add Shooter
 
 # calc defense
@@ -37,6 +38,7 @@ scoreboard players reset #Damage Temporary
 scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
 function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
 
+
 # bouncy
 execute store result score #rng Temporary run random value 0..1
 execute if entity @s[tag=!Invulnerable] if score #rng Temporary matches 0..1 run tag @e[distance=0.1..6,type=!mannequin,type=!item_display, type=!player,type=!item,type=!marker,type=!arrow,type=!armor_stand,limit=1,sort=random] add BouncyTarget
@@ -44,4 +46,6 @@ execute at @s positioned ~ ~1 ~ facing entity @n[tag=BouncyTarget] eyes summon a
 tag @e remove BouncyTarget
 
 execute on attacker run tag @s remove Shooter
+
+execute if entity @s[type=!#teil:players] at @s run function system:api/autokill/check
 

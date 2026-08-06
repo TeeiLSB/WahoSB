@@ -6,10 +6,11 @@ function system:core/player/stats/combat_damage_calc/get_stats/intelligence
 function system:core/player/stats/combat_damage_calc/get_stats/abilitydamage
 function system:core/player/stats/combat_damage_calc/get_stats/baseabilitydamage
 
-# some stats str! (foraging,gdrag)
-scoreboard players add @s Status.Strength 300
+# some stats str! (foraging 50,gdrag300,equipment 500)
+scoreboard players add @s Status.Strength 850
 
-
+# some stats int! (equipment 350, alc 100, ench 100)
+scoreboard players add @s Status.Strength 550
 
 # dungeon buff
 function system:dungeon/blessing/power

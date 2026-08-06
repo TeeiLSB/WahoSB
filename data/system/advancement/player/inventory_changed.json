@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "inv": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "rewards": {
+    "function": "system:core/player/inventory_hotbar_changed"
+  }
+}

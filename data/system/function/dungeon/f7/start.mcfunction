@@ -18,6 +18,9 @@
  execute unless entity @a[tag=Dungeon.Class.Archer] positioned 73.5 221 13.5 run function system:bot/summon/archer/summon
 
 
+
+ execute if entity @a[tag=Dungeon.Solo] run kill @e[type=mannequin,tag=Bot]
+
 # bossbar
  # clear previous one
     bossbar remove wahosb:f7

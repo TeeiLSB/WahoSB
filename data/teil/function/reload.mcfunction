@@ -52,6 +52,9 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add F7.Gimmick.Status dummy
  scoreboard objectives add OwnerUUID dummy
  scoreboard objectives add Dungeon.Blessing dummy
+ scoreboard objectives add WalkSpeed dummy
+ scoreboard objectives add CurrentHotbarSlot dummy
+ scoreboard objectives add PreviousHotbarSlot dummy
  # stats scores
  scoreboard objectives add Status.Strength dummy
  scoreboard objectives add Status.CritDamage dummy
