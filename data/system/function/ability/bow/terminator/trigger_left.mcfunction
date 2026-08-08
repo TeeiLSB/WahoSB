@@ -8,4 +8,4 @@ execute if score @s CD.default matches 0 run tag @s remove Shooter
 execute if score @s CD.default matches 0 run scoreboard players set @s CD.default 5
 
 tag @s add Player.DuplexActivive
-tag @s[tag=Dungeon.Class.Archer] add Player.ArcherArrowActivive
+#tag @s[tag=Dungeon.Class.Archer] add Player.ArcherArrowActivive

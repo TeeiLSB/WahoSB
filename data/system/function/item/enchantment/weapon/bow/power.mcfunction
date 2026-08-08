@@ -1,1 +1,1 @@
-item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{waho:{power:1b}}}
+item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{enchant:{"power":7}}}

@@ -29,7 +29,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{WeaponType:bow,Name:Terminator,Rarity:5,Stats:{BaseDamage:310,Strength:50,CritDamage:250,AttackSpeed:40}}"
+							"tag": "{WeaponType:bow,Name:Terminator,Potato:0,Aow:0,Recom:0,Star:0,Rarity:5,Stats:{BaseDamage:310,Strength:50,CritDamage:250,AttackSpeed:40}}"
 						},
 						{
 							"function": "minecraft:set_components",
@@ -59,6 +59,22 @@
 								"minecraft:use_effects": {
 									"can_sprint": true,
 									"speed_multiplier": 1
+								}
+							}
+						},
+						{
+							"function": "set_enchantments",
+							"enchantments": {
+								"system:bow/terminator": 1
+							}
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"tooltip_display": {
+									"hidden_components": [
+										"enchantments"
+									]
 								}
 							}
 						}
