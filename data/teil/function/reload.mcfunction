@@ -55,6 +55,7 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add WalkSpeed dummy
  scoreboard objectives add CurrentHotbarSlot dummy
  scoreboard objectives add PreviousHotbarSlot dummy
+ scoreboard objectives add PlayerSecretCount dummy
  # stats scores
  scoreboard objectives add Status.Strength dummy
  scoreboard objectives add Status.CritDamage dummy

@@ -29,7 +29,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{WeaponType:bow,Name:Terminator,Potato:0,Aow:0,Recom:0,Star:0,Rarity:5,Stats:{BaseDamage:310,Strength:50,CritDamage:250,AttackSpeed:40}}"
+							"tag": "{WeaponType:bow,Name:Terminator,Dungeonized:0,Potato:0,Recom:0,Star:0,MStar:0,Rarity:5,Stats:{BaseDamage:310,Strength:50,CritDamage:250,AttackSpeed:40}}"
 						},
 						{
 							"function": "minecraft:set_components",

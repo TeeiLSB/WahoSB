@@ -1,0 +1,1 @@
+execute unless items entity @s weapon.mainhand *[custom_data~{Recom:1}] run function system:item/misc_modifier/recom/main

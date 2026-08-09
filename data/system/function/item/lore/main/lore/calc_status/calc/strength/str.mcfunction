@@ -1,0 +1,1 @@
+$data modify storage temp: temp_lore.Str set value "§7Strength: §c+$(Str)"

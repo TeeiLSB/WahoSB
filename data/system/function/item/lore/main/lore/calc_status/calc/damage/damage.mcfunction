@@ -1,0 +1,1 @@
+$data modify storage temp: temp_lore.Damage set value "§7Damage: §c+$(Damage)"
