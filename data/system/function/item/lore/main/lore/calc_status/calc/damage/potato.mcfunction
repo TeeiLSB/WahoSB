@@ -1,1 +1,0 @@
-$data modify storage temp: temp_lore.Potato set value " §e(+$(Potato))"

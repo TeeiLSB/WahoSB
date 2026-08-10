@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:multi_action",
+	"title": "inventory",
+	"body": [
+		{
+			"type": "minecraft:item",
+			"item": "diamond"
+		},
+{
+			"type": "minecraft:item",
+			"item": "emerald"
+		}
+	],
+	"can_close_with_escape": true,
+	"pause": false,
+	"actions": [
+		{
+			"label": "Close",
+			"width": 100
+		}
+	]
+}

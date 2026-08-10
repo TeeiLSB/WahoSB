@@ -1,1 +1,0 @@
-$data modify storage temp: temp_lore.Reforge set value " §9(+$(Str))"

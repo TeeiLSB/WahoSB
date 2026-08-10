@@ -1,1 +1,0 @@
-$data modify storage temp: temp_lore.DungeonDamage set value " §8(+$(DungeonDamage))"

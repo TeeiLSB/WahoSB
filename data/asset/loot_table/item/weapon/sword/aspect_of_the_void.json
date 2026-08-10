@@ -1,0 +1,71 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:recovery_compass",
+					"conditions": [],
+					"functions": [
+						{
+							"function": "minecraft:set_item",
+							"item": "minecraft:recovery_compass"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "diamond_shovel"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"strings": {
+								"values": [
+									"aspect_of_the_void"
+								],
+								"mode": "replace_all"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{WeaponType:Sword,Name:\"Aspect of the Void\",Potato:0,Recom:0,Star:0,MStar:0,Rarity:4,Stats:{BaseDamage:120,Strength:100}}"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:piercing_weapon": {
+									"deals_knockback": false,
+									"dismounts": false,
+									"sound": "minecraft:intentionally_empty",
+									"hit_sound": "minecraft:intentionally_empty"
+								}
+							}
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:consumable": {
+									"consume_seconds": 2147483647,
+									"animation": "none",
+									"sound": "minecraft:intentionally_empty",
+									"has_consume_particles": false
+								}
+							}
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"tooltip_display": {
+									"hidden_components": [
+										"enchantments"
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

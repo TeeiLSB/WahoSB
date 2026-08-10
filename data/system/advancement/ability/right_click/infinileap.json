@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "click": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "components": {
+            "minecraft:custom_model_data": {"strings": ["infinileap"]}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "system:ability/misc/infinileap/trigger"
+  }
+}

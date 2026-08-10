@@ -8,3 +8,6 @@
  function system:core/player/generic/get_name
  function system:core/player/friendly_fire/team with storage lib: generic
  
+# dungeon stat boost
+ scoreboard objectives add DungeonStatBoost dummy
+ scoreboard objectives add CatacombsLevel dummy
