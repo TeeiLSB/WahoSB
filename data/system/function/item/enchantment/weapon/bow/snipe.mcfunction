@@ -1,1 +1,1 @@
-item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{enchant:{"toxophilite":4}}}
+item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{enchant:{"snipe":4}}}

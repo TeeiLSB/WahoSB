@@ -1,1 +1,3 @@
-item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{enchant:{"duplex":5}}}
+# reset
+item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{enchant:{ult:""}}}
+item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{enchant:{ult:{"duplex":5}}}}

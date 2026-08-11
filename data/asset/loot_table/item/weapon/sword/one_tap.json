@@ -15,21 +15,21 @@
 						{
 							"function": "minecraft:set_components",
 							"components": {
-								"minecraft:item_model": "diamond_axe"
+								"minecraft:item_model": "wooden_sword"
 							}
 						},
 						{
 							"function": "minecraft:set_custom_model_data",
 							"strings": {
 								"values": [
-									"axe_of_the_shredded"
+									"one_tap_sword"
 								],
 								"mode": "replace_all"
 							}
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{HasGemstoneSlot:2,WeaponType:axe,Name:\"Axe of the Shredded\",Dungeonized:1,Potato:0,Recom:0,Star:0,MStar:0,Rarity:5,Stats:{BaseDamage:140,Strength:115}}"
+							"tag": "{WeaponType:sword,Name:\"One Tap Sword\",Dungeonized:1,Potato:0,Recom:0,Star:0,MStar:0,Rarity:7,Stats:{BaseDamage:99999,Strength:99999,CritDamage:99999}}"
 						},
 						{
 							"function": "minecraft:set_components",
@@ -47,18 +47,9 @@
 							"components": {
 								"minecraft:consumable": {
 									"consume_seconds": 2147483647,
-									"animation": "none",
+									"animation": "block",
 									"sound": "minecraft:intentionally_empty",
 									"has_consume_particles": false
-								}
-							}
-						},
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"minecraft:use_effects": {
-									"can_sprint": true,
-									"speed_multiplier": 1
 								}
 							}
 						},

@@ -58,8 +58,17 @@ execute if data entity @s SelectedItem.components."minecraft:custom_data".HasGem
 ## shot cooldown
 function system:item/lore/main/lore/calc_status/calc/shot_cooldown/main
 
+# space
+execute if data entity @s SelectedItem.components."minecraft:custom_data".enchant run data modify storage temp: loreGen.lores append value ""
 
+# enchantment
+function system:item/lore/main/lore/enchantment/get/main
 
+# space
+data modify storage temp: loreGen.lores append value ""
+
+# rarity
+function system:item/lore/main/lore/rarity/main
 
 
 item modify entity @s weapon.mainhand {function: "set_lore" ,mode:"replace_all",lore:[]}

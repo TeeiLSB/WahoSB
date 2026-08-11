@@ -29,7 +29,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{HasGemstoneSlot:2,WeaponType:sword,Name:Hyperion,Dungeonized:0,Potato:0,Recom:0,Star:0,MStar:0,Rarity:5,Stats:{BaseDamage:310,Strength:150,Intelligence:450,Ferocity:30}}"
+							"tag": "{HasGemstoneSlot:2,WeaponType:sword,Name:Hyperion,Dungeonized:1,Potato:0,Recom:0,Star:0,MStar:0,Rarity:5,Stats:{BaseDamage:310,Strength:150,Intelligence:450,Ferocity:30}}"
 						},
 						{
 							"function": "minecraft:set_components",
