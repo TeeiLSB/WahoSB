@@ -47,6 +47,18 @@ function system:item/lore/main/lore/calc_status/calc/crit_chance/main
 function system:item/lore/main/lore/calc_status/calc/crit_damage/main
 ## As
 function system:item/lore/main/lore/calc_status/calc/attack_speed/main
+## Fero
+function system:item/lore/main/lore/calc_status/calc/ferocity/main
+## Int
+function system:item/lore/main/lore/calc_status/calc/intelligence/main
+
+# gem
+execute if data entity @s SelectedItem.components."minecraft:custom_data".HasGemstoneSlot run function system:item/lore/main/lore/gemstone/get/main
+
+## shot cooldown
+function system:item/lore/main/lore/calc_status/calc/shot_cooldown/main
+
+
 
 
 
@@ -74,7 +86,6 @@ data modify storage temp: lore_set.16 set from storage temp: loreGen.lores[16]
 data modify storage temp: lore_set.17 set from storage temp: loreGen.lores[17]
 data modify storage temp: lore_set.18 set from storage temp: loreGen.lores[18]
 data modify storage temp: lore_set.19 set from storage temp: loreGen.lores[19]
-
 
 # loreに反映
 execute if data storage temp: loreGen.lores[0] run function system:item/lore/main/lore/run/0 with storage temp: lore_set

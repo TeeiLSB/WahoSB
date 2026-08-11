@@ -29,7 +29,7 @@
 						},
 						{
 							"function": "minecraft:set_custom_data",
-							"tag": "{WeaponType:Sword,Name:\"Aspect of the Void\",Potato:0,Recom:0,Star:0,MStar:0,Rarity:4,Stats:{BaseDamage:120,Strength:100}}"
+							"tag": "{HasGemstoneSlot:1,WeaponType:sword,Name:\"Aspect of the Void\",Potato:0,Recom:0,Star:0,MStar:0,Rarity:4,Stats:{BaseDamage:120,Strength:100}}"
 						},
 						{
 							"function": "minecraft:set_components",
@@ -39,6 +39,15 @@
 									"dismounts": false,
 									"sound": "minecraft:intentionally_empty",
 									"hit_sound": "minecraft:intentionally_empty"
+								}
+							}
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:use_effects": {
+									"can_sprint": true,
+									"speed_multiplier": 1
 								}
 							}
 						},

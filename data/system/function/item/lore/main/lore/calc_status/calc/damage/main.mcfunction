@@ -46,8 +46,8 @@ execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforg
  execute store result storage temp: temp_setting.Dungeon int 1 run scoreboard players get #ForDungeon Temporary
 
 # dungeonizeされてないitemたち
- execute if entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set from storage temp: temp_lore.Base
- execute unless entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set value ""
+ execute if entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_setting.Dungeon set from storage temp: temp_setting.Base
+
 
 function system:item/lore/main/lore/calc_status/calc/damage/storage with storage temp: temp_setting
 # potatoがついていない場合
@@ -55,10 +55,13 @@ function system:item/lore/main/lore/calc_status/calc/damage/storage with storage
 # reforgeがない場合
  execute unless data entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.Dmg run \
  data modify storage temp: temp_lore.Reforge set value ""
+#dungeonizeされてない場合
+ execute unless entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set value ""
 
 # lore生成
  execute if entity @s[tag=InDungeon] if score #Base Temporary matches 1.. run function system:item/lore/main/lore/calc_status/store/damage/dungeon with storage temp: temp_lore
  execute unless entity @s[tag=InDungeon] if score #Base Temporary matches 1.. run function system:item/lore/main/lore/calc_status/store/damage/main with storage temp: temp_lore
 
 
-
+scoreboard players operation @s[tag=!InDungeon] MainHand.Dmg = #Base Temporary
+scoreboard players operation @s[tag=InDungeon] MainHand.Dmg = #ForDungeon Temporary

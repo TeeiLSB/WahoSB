@@ -1,1 +1,1 @@
-$data modify storage temp: loreGen.lores append value "$(Base)$(Potato)$(Aow)$(Reforge)$(Dungeon)"
+$data modify storage temp: loreGen.lores append value "$(Base)$(Potato)$(Aow)$(Reforge)$(Gemstone)$(Dungeon)"

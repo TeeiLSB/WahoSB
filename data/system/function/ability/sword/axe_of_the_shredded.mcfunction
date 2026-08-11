@@ -1,4 +1,6 @@
 
+
+
 tag @s add This
 execute if score @s CD.default matches 0 anchored eyes positioned ^ ^ ^ run execute summon item_display run function system:ability/sword/axe_of_the_shredded_init
 tag @s remove This

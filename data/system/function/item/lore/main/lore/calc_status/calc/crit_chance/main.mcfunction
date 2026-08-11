@@ -21,9 +21,10 @@ execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforg
  scoreboard players operation #CalcStar Temporary += #StarAmount_Copy Temporary
  scoreboard players operation #Base Temporary *= #CalcStar Temporary
  scoreboard players operation #Base Temporary /= #100 Constant
-
+ 
 # storageに保存
  execute store result storage temp: temp_setting.Base int 1 run scoreboard players get #Base Temporary
+
 
 ## Dungeon 計算
 # Base
@@ -38,19 +39,22 @@ execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforg
  execute store result storage temp: temp_setting.Dungeon int 1 run scoreboard players get #ForDungeon Temporary
 
 # dungeonizeされてないitemたち
- execute if entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set from storage temp: temp_lore.Base
- execute unless entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set value ""
+ execute if entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_setting.Dungeon set from storage temp: temp_setting.Base
+
 
 function system:item/lore/main/lore/calc_status/calc/crit_chance/storage with storage temp: temp_setting
-
-
+# potatoがついていない場合
+ execute if score #PotatoBook.Amount Temporary matches 0 run data modify storage temp: temp_lore.Potato set value ""
 # reforgeがない場合
  execute unless data entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.Cc run \
  data modify storage temp: temp_lore.Reforge set value ""
+#dungeonizeされてない場合
+ execute unless entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set value ""
 
 # lore生成
  execute if entity @s[tag=InDungeon] if score #Base Temporary matches 1.. run function system:item/lore/main/lore/calc_status/store/crit_chance/dungeon with storage temp: temp_lore
  execute unless entity @s[tag=InDungeon] if score #Base Temporary matches 1.. run function system:item/lore/main/lore/calc_status/store/crit_chance/main with storage temp: temp_lore
 
-
+scoreboard players operation @s[tag=!InDungeon] MainHand.Cc = #Base Temporary
+scoreboard players operation @s[tag=InDungeon] MainHand.Cc = #ForDungeon Temporary
 

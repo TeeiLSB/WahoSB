@@ -4,13 +4,15 @@
 # spring boots
 scoreboard players reset @s[nbt={OnGround:false}] Item.Ability.SpringBoots
 
+# speed
+ function system:core/player/stats/main/speed/tick
 
 
 # wither からの攻撃とか
  effect clear @s wither
 
 
-# speed check
+# speed check (block per secてきな)
 function system:core/motion/speed_check/get
 
 # detect hotbar change

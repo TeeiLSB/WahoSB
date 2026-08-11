@@ -69,6 +69,8 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.AbilityDamage dummy
  scoreboard objectives add Status.BaseAbilityDamage dummy
  scoreboard objectives add Status.MagicDamage dummy
+ scoreboard objectives add Status.SpeedCap dummy
+ scoreboard objectives add Status.Speed dummy
 
 # big score
   scoreboard objectives add Status.MageBeamDamage dummy
@@ -86,6 +88,17 @@ setblock 0 0 0 black_shulker_box
 
  # mob status
  scoreboard objectives add Status.MobAttackDamage dummy
+
+# inventorys status
+ scoreboard objectives add MainHand.Dmg dummy
+ scoreboard objectives add MainHand.Str dummy
+ scoreboard objectives add MainHand.Cc dummy
+ scoreboard objectives add MainHand.Cd dummy
+ scoreboard objectives add MainHand.As dummy
+ scoreboard objectives add MainHand.Fero dummy
+ scoreboard objectives add MainHand.Int dummy
+
+
 
  #* basedamageは武器そのもの weapondamageはenchantとかの計算をやった後
 
