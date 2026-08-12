@@ -1,0 +1,13 @@
+function system:item/enchantment/weapon/sword/critical
+function system:item/enchantment/weapon/sword/ender_slayer
+function system:item/enchantment/weapon/sword/fire_aspect
+function system:item/enchantment/weapon/sword/first_strike
+function system:item/enchantment/weapon/sword/giant_killer
+function system:item/enchantment/weapon/generic/gravity
+function system:item/enchantment/weapon/sword/lethality
+function system:item/enchantment/weapon/sword/prosecute
+function system:item/enchantment/weapon/sword/sharpness
+function system:item/enchantment/weapon/sword/thunderlord
+function system:item/enchantment/weapon/sword/venomous
+function system:item/enchantment/weapon/generic/vicious
+function system:item/enchantment/weapon/sword/smite

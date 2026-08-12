@@ -1,0 +1,1 @@
+$data modify storage temp: loreGen.lores append value "$(color)$(recom1)§r$(rarity)$(dungeon)$(type)$(recom2)"

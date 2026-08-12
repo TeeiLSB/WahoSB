@@ -1,8 +1,7 @@
 ## POTATO BOOK
-
 # potato bookの数をscoreに
- execute store result score #PotatoBook.Amount Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Potato
- execute store result storage temp: temp_setting.Potato int 1 run scoreboard players operation #PotatoBook.Amount Temporary *= #2 Constant
+ execute unless data entity @s SelectedItem.components."minecraft:custom_data".Armor store result score #PotatoBook.Amount Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Potato
+ execute unless data entity @s SelectedItem.components."minecraft:custom_data".Armor store result storage temp: temp_setting.Potato int 1 run scoreboard players operation #PotatoBook.Amount Temporary *= #2 Constant
 
 ## REFORGE
 # reforge Strがあるならそれを代入 ないなら""
@@ -24,11 +23,11 @@ execute store result storage temp: temp_setting.Gemstone int 1 run scoreboard pl
 # 足す
  scoreboard players operation #Base Temporary += #Reforge Temporary
  scoreboard players operation #Base Temporary += #Aow Temporary
- scoreboard players operation #Base Temporary += #PotatoBook.Amount Temporary
+ execute unless data entity @s SelectedItem.components."minecraft:custom_data".Armor run scoreboard players operation #Base Temporary += #PotatoBook.Amount Temporary
+  scoreboard players operation #Base Temporary += #Gem_1 Temporary
 
 # dungeonダメージの計算用にとっておく
  scoreboard players operation #ForDungeon Temporary = #Base Temporary
- scoreboard players operation #Base Temporary += #Gem_1 Temporary
 
 # starの倍率計算
 # starごとに2%アップ
@@ -61,6 +60,8 @@ execute store result storage temp: temp_setting.Gemstone int 1 run scoreboard pl
 function system:item/lore/main/lore/calc_status/calc/strength/storage with storage temp: temp_setting
 # potatoがついていない場合
  execute if score #PotatoBook.Amount Temporary matches 0 run data modify storage temp: temp_lore.Potato set value ""
+  # 武器じゃない場合
+ execute if data entity @s SelectedItem.components."minecraft:custom_data".Armor run data modify storage temp: temp_lore.Potato set value ""
 # reforgeがない場合
  execute unless data entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.Str run \
  data modify storage temp: temp_lore.Reforge set value ""
@@ -68,7 +69,6 @@ function system:item/lore/main/lore/calc_status/calc/strength/storage with stora
  execute unless entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set value ""
 # gemがない場合
  execute unless data entity @s SelectedItem.components."minecraft:custom_data".GemstoneS_1.Str unless data entity @s SelectedItem.components."minecraft:custom_data".GemstoneS_2.Str run data modify storage temp: temp_lore.Gemstone set value ""
-
 
 # lore生成
  execute if entity @s[tag=InDungeon] if score #Base Temporary matches 1.. run function system:item/lore/main/lore/calc_status/store/strength/dungeon with storage temp: temp_lore

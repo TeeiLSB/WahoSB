@@ -1,0 +1,67 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:recovery_compass",
+					"conditions": [],
+					"functions": [
+						{
+							"function": "minecraft:set_item",
+							"item": "minecraft:recovery_compass"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "leather_leggings"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"strings": {
+								"values": [
+									"necrons_leggings"
+								],
+								"mode": "replace_all"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{Armor:1,HasGemstoneSlot:2,WeaponType:leggings,Name:\"Necron's Leggings\",Dungeonized:1,Potato:0,Recom:0,Star:0,MStar:0,Rarity:5,Stats:{Health:230,Defense:125,CritDamage:30,Intelligence:10,Str:40}}"
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"dyed_color": 15162428
+							}
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"equippable": {
+									"slot": "legs",
+									"swappable": false,
+									"asset_id": "leather",
+									"equip_sound": "intentionally_empty",
+									"shearing_sound": "intentionally_empty"
+								}
+							}
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"tooltip_display": {
+									"hidden_components": [
+										"enchantments"
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

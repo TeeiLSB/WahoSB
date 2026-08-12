@@ -7,6 +7,8 @@ scoreboard players reset @s[nbt={OnGround:false}] Item.Ability.SpringBoots
 # speed
  function system:core/player/stats/main/speed/tick
 
+# refresh timer
+ scoreboard players remove @s[scores={PlayerRefreshTimer=1..}] PlayerRefreshTimer 1
 
 # wither からの攻撃とか
  effect clear @s wither

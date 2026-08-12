@@ -1,0 +1,80 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:recovery_compass",
+					"conditions": [],
+					"functions": [
+						{
+							"function": "minecraft:set_item",
+							"item": "minecraft:recovery_compass"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "golden_axe"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"strings": {
+								"values": [
+									"ragnarock_axe"
+								],
+								"mode": "replace_all"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{HasGemstoneSlot:1,WeaponType:axe,Name:\"Ragnarock Axe\",Potato:0,Recom:0,Star:0,MStar:0,Rarity:3,Stats:{BaseDamage:200,Strength:100}}"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:piercing_weapon": {
+									"deals_knockback": false,
+									"dismounts": false,
+									"sound": "minecraft:intentionally_empty",
+									"hit_sound": "minecraft:intentionally_empty"
+								}
+							}
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:consumable": {
+									"consume_seconds": 2147483647,
+									"animation": "none",
+									"sound": "minecraft:intentionally_empty",
+									"has_consume_particles": false
+								}
+							}
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:use_effects": {
+									"can_sprint": true,
+									"speed_multiplier": 1
+								}
+							}
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"tooltip_display": {
+									"hidden_components": [
+										"enchantments"
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

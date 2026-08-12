@@ -1,1 +1,0 @@
-item modify entity @s weapon.mainhand {function: "set_custom_data",tag:{enchant:{"dragon_hunter":5}}}

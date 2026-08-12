@@ -1,0 +1,1 @@
+$data modify storage temp: loreGen.lores append value "$(InDungeon)$(Potato)$(Reforge)"

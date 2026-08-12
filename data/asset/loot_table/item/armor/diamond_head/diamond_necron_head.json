@@ -1,0 +1,73 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:recovery_compass",
+					"conditions": [],
+					"functions": [
+						{
+							"function": "minecraft:set_item",
+							"item": "minecraft:player_head"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "player_head"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_model_data",
+							"strings": {
+								"values": [
+									"diamond_necron_head"
+								],
+								"mode": "replace_all"
+							}
+						},
+						{
+							"function": "minecraft:set_custom_data",
+							"tag": "{Armor:1,DiaHead:1,WeaponType:helmet,Name:\"Diamond Necron Head\",Dungeonized:1,Potato:0,Recom:0,Star:0,MStar:0,Rarity:8,Stats:{Health:220,Defense:80,Strength:40}}"
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"tooltip_display": {
+									"hidden_components": [
+										"enchantments"
+									]
+								}
+							}
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"equippable": {
+									"slot": "head",
+									"swappable": false,
+									"equip_sound": "intentionally_empty",
+									"shearing_sound": "intentionally_empty"
+								}
+							}
+						},
+						{
+							"function": "set_components",
+							"components": {
+								"profile": {
+									"properties": [
+										{
+											"name": "textures",
+											"value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGIxMTVjZGM0NWZkODRmMjFmYmE3YWMwZjJiYzc3YmMzYjYzMDJiZTY3MDg0MmY2ZTExZjY2ZWI1NTdmMTNlZSJ9fX0="
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}			

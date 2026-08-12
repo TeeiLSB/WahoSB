@@ -10,8 +10,8 @@
           "equipment": {
             "feet": {
               "components": {
-                "minecraft:custom_data": "{id:spring_boots}"
-              }
+            "minecraft:custom_model_data": {"strings": ["spring_boots"]}
+          }
             }
           }
         }

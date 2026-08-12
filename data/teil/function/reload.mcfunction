@@ -56,6 +56,7 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add CurrentHotbarSlot dummy
  scoreboard objectives add PreviousHotbarSlot dummy
  scoreboard objectives add PlayerSecretCount dummy
+ scoreboard objectives add PlayerRefreshTimer dummy
  # stats scores
  scoreboard objectives add Status.Strength dummy
  scoreboard objectives add Status.CritDamage dummy
@@ -97,7 +98,44 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add MainHand.As dummy
  scoreboard objectives add MainHand.Fero dummy
  scoreboard objectives add MainHand.Int dummy
+ scoreboard objectives add MainHand.Hp dummy
+ scoreboard objectives add MainHand.Def dummy
 
+ scoreboard objectives add Chest.Str dummy
+ scoreboard objectives add Chest.Cc dummy
+ scoreboard objectives add Chest.Cd dummy
+ scoreboard objectives add Chest.As dummy
+ scoreboard objectives add Chest.Fero dummy
+ scoreboard objectives add Chest.Int dummy
+ scoreboard objectives add Chest.Hp dummy
+ scoreboard objectives add Chest.Def dummy
+
+ scoreboard objectives add legs.Str dummy
+ scoreboard objectives add legs.Cc dummy
+ scoreboard objectives add legs.Cd dummy
+ scoreboard objectives add legs.As dummy
+ scoreboard objectives add legs.Fero dummy
+ scoreboard objectives add legs.Int dummy
+ scoreboard objectives add legs.Hp dummy
+ scoreboard objectives add legs.Def dummy
+
+ scoreboard objectives add feet.Str dummy
+ scoreboard objectives add feet.Cc dummy
+ scoreboard objectives add feet.Cd dummy
+ scoreboard objectives add feet.As dummy
+ scoreboard objectives add feet.Fero dummy
+ scoreboard objectives add feet.Int dummy
+ scoreboard objectives add feet.Hp dummy
+ scoreboard objectives add feet.Def dummy
+
+ scoreboard objectives add head.Str dummy
+ scoreboard objectives add head.Cc dummy
+ scoreboard objectives add head.Cd dummy
+ scoreboard objectives add head.As dummy
+ scoreboard objectives add head.Fero dummy
+ scoreboard objectives add head.Int dummy
+ scoreboard objectives add head.Hp dummy
+ scoreboard objectives add head.Def dummy
 
 
  #* basedamageは武器そのもの weapondamageはenchantとかの計算をやった後

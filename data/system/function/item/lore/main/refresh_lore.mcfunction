@@ -39,6 +39,10 @@ data modify storage temp: loreGen set value {lores:[]}
 
 ## damage
 function system:item/lore/main/lore/calc_status/calc/damage/main
+## Hp
+function system:item/lore/main/lore/calc_status/calc/health/main
+## def
+function system:item/lore/main/lore/calc_status/calc/defense/main
 ## str
 function system:item/lore/main/lore/calc_status/calc/strength/main
 ## Cc

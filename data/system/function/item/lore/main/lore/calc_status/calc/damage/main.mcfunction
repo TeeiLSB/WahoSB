@@ -1,8 +1,8 @@
 ## POTATO BOOK
 
 # potato bookの数をscoreに
- execute store result score #PotatoBook.Amount Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Potato
- execute store result storage temp: temp_setting.Potato int 1 run scoreboard players operation #PotatoBook.Amount Temporary *= #2 Constant
+ execute unless data entity @s SelectedItem.components."minecraft:custom_data".Armor store result score #PotatoBook.Amount Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Potato
+ execute unless data entity @s SelectedItem.components."minecraft:custom_data".Armor store result storage temp: temp_setting.Potato int 1 run scoreboard players operation #PotatoBook.Amount Temporary *= #2 Constant
 
 ## REFORGE
 # reforge Strがあるならそれを代入 ないなら""
@@ -52,6 +52,8 @@ execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforg
 function system:item/lore/main/lore/calc_status/calc/damage/storage with storage temp: temp_setting
 # potatoがついていない場合
  execute if score #PotatoBook.Amount Temporary matches 0 run data modify storage temp: temp_lore.Potato set value ""
+ # 武器じゃない場合
+ execute if data entity @s SelectedItem.components."minecraft:custom_data".Armor run data modify storage temp: temp_lore.Potato set value ""
 # reforgeがない場合
  execute unless data entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.Dmg run \
  data modify storage temp: temp_lore.Reforge set value ""

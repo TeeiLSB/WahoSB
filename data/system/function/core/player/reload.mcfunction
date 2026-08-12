@@ -11,3 +11,6 @@
 # dungeon stat boost
  scoreboard objectives add DungeonStatBoost dummy
  scoreboard objectives add CatacombsLevel dummy
+
+# refresh timer
+ scoreboard players set @a PlayerRefreshTimer 10

@@ -37,6 +37,10 @@ execute unless items entity @s weapon.mainhand *[custom_data~{Dungeonized:1}] ru
  execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:bow}] run data modify storage temp: rarity.type set value " §lBOW"
  execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:sword}] run data modify storage temp: rarity.type set value " §lSWORD"
  execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:axe}] run data modify storage temp: rarity.type set value " §lAXE"
+ execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:helmet}] run data modify storage temp: rarity.type set value " §lHELMET"
+ execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:chestplate}] run data modify storage temp: rarity.type set value " §lCHESTPLATE"
+ execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:leggings}] run data modify storage temp: rarity.type set value " §lLEGGINGS"
+ execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:boots}] run data modify storage temp: rarity.type set value " §lBOOTS"
  execute unless data entity @s SelectedItem.components.minecraft:custom_data.WeaponType run data modify storage temp: rarity.type set value " "
 
 
