@@ -8,8 +8,8 @@ tag @s add WahoMobs
 tag @s add F7.Reset
 scoreboard players set @s Status.Health 0
 scoreboard players set @s Status.Health.b 0
-scoreboard players set @s Status.Health.m 35
-scoreboard players set @s Status.Health.k 0
+scoreboard players set @s Status.Health.m 3
+scoreboard players set @s Status.Health.k 500
 
 
 item replace entity @s weapon.mainhand with bow

@@ -27,12 +27,12 @@ execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run tag @s add Invuln
 
 # 25m以下だよ!!
     # hp比較
-    function system:api/big_score/compare/first {"l_as":"@s","l_obj":"Status.Health","b":"0","m":"200","k":"0","n":"0"}
+    function system:api/big_score/compare/first {"l_as":"@s","l_obj":"Status.Health","b":"0","m":"20","k":"0","n":"0"}
     # まだenrageしてなくて25以下だったらenrageを1にする
     execute if score $MaxorEnraged F7.Gimmick.Status matches 0 unless score $MaxorPhase F7.Gimmick.Status matches 1 if score #CompareResult BigScore matches ..0 run function system:dungeon/f7/p1/maxor/25m_trigger
     # enrageが1だったらhpを25mに固定
     execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health.b 0
-    execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health.m 200
+    execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health.m 20
     execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health.k 0
     execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard players set @s Status.Health 0
     # hpを更新
@@ -54,7 +54,7 @@ execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run scoreboard player
 # bossbar
 scoreboard players operation #BossHPRate Temporary = @s Status.Health.m
 execute store result bossbar wahosb:f7 value run scoreboard players get #BossHPRate Temporary
-execute if score @s Status.Health.b matches 1 run bossbar set wahosb:f7 value 1000
+execute if score @s Status.Health.m matches 100 run bossbar set wahosb:f7 value 100
 scoreboard players reset #BossHPRate Temporary
 
 # maxor hp check

@@ -1,7 +1,7 @@
-data merge entity @s {NoAI:1b,CustomNameVisible:1b,CustomName:{"text":"《Maxor》","bold":true}}
+data merge entity @s {NoAI:1b,CustomNameVisible:1b,CustomName:{"text":"《Storm》","bold":true}}
 effect give @s resistance infinite 255 true
 
-tag @s add Mob.Dungeon.Boss.Maxor
+tag @s add Mob.Dungeon.Boss.Storm
 tag @s add CantAutoKill
 tag @s add F7.Reset
 
@@ -20,7 +20,7 @@ enchantments={"system:bow/detect/arrow_hit":1}]
 
 scoreboard players set @s Status.Health 0
 scoreboard players set @s Status.Health.b 0
-scoreboard players set @s Status.Health.m 100
+scoreboard players set @s Status.Health.m 750
 scoreboard players set @s Status.Health.k 0
 
 

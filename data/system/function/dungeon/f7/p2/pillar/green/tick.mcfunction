@@ -1,0 +1,1 @@
+execute positioned 32 170 12 if entity @p[distance=..2.5,nbt={OnGround:1b}] run function system:dungeon/f7/p2/pillar/green/pressing

@@ -28,8 +28,8 @@
   bossbar add wahosb:f7 {"text":"§e《§cMaxor§e》"}
   bossbar set wahosb:f7 players @a
   bossbar set wahosb:f7 color yellow
-  bossbar set wahosb:f7 max 1000
-  bossbar set wahosb:f7 value 1000
+  bossbar set wahosb:f7 max 100
+  bossbar set wahosb:f7 value 100
 
 # beacon reset
  setblock 73 222 73 black_stained_glass
@@ -46,6 +46,7 @@ clone 69 220 152 77 220 169 69 220 32
 
 # summon maxor
  execute positioned 73 228 53 summon wither run function asset:mobs/dungeon/f7/maxor
+
 
 
 

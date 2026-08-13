@@ -5,3 +5,8 @@ tellraw @a [{"text":"§aMaxor Phase ended in "},{"score":{"name":"$F7tick","obje
 
 # real death
 tag @s remove CantAutoKill
+
+bossbar remove wahosb:f7
+
+
+function system:dungeon/f7/p2/start

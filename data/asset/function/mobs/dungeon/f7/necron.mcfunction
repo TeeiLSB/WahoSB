@@ -15,11 +15,11 @@ item replace entity @s saddle with \
 bedrock[equippable={slot:"saddle",equip_sound:intentionally_empty,shearing_sound:intentionally_empty,swappable:false},\
 enchantments={"system:bow/detect/arrow_hit":1}]
 
-scoreboard players set @s Status.Defense 720
+#scoreboard players set @s Status.Defense 720
 
 scoreboard players set @s Status.Health 0
 scoreboard players set @s Status.Health.b 1
-scoreboard players set @s Status.Health.m 400
+scoreboard players set @s Status.Health.m 0
 scoreboard players set @s Status.Health.k 0
 
 

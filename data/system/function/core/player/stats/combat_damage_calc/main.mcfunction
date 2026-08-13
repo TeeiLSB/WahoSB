@@ -3,8 +3,6 @@ function system:core/player/stats/combat_damage_calc/get_stats/basedamage
 function system:core/player/stats/combat_damage_calc/get_stats/critdamage
 function system:core/player/stats/combat_damage_calc/get_stats/strength
 function system:core/player/stats/combat_damage_calc/get_stats/intelligence
-function system:core/player/stats/combat_damage_calc/get_stats/abilitydamage
-function system:core/player/stats/combat_damage_calc/get_stats/baseabilitydamage
 
 # some stats str! (foraging 50,gdrag300,equipment 500)
 scoreboard players add @s Status.Strength 850

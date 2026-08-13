@@ -27,7 +27,7 @@ execute if score $CrystalCount F7.Gimmick.Status matches 2 run function system:d
 execute if score $tick Tick matches 10 run function system:dungeon/f7/p1/beacon_beam/floor_moving
 
 # p2のために床をあける
-#execute if score $F7.Boss.DeathSound F7.Gimmick.Status matches 1 run fill 69 220 49 77 220 32 air
+execute if score $F7.Boss.DeathSound F7.Gimmick.Status matches 1 run fill 69 220 49 77 220 32 air
 
 
 # maxor tick
@@ -36,6 +36,9 @@ execute if score $tick Tick matches 10 run function system:dungeon/f7/p1/beacon_
 
  #  maxor death sound
  execute if score $F7.Boss.DeathSound F7.Gimmick.Status matches 1.. run function system:dungeon/f7/p1/maxor/death_sound
+
+# p2 tick
+ execute if score $F7.Phase F7.Gimmick.Status matches 2 run function system:dungeon/f7/p2/tick
 
 
  # tick count
