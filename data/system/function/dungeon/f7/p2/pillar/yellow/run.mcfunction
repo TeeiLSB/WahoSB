@@ -24,4 +24,4 @@ execute if score $YellowPillarLevel F7.Gimmick.Status matches ..23 positioned 43
 
 
 # can crush storm
-scoreboard players set $Yellow.StormCanCrush F7.Gimmick.Status 60
+execute if score $YellowPillarTurn F7.Gimmick.Status matches 1 run scoreboard players set $Yellow.StormCanCrush F7.Gimmick.Status 60

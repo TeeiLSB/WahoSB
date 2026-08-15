@@ -1,4 +1,4 @@
-execute store result score #StarAmount Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Star
+execute store result score #StarAmount Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Star
 
  ## star
  # max50%

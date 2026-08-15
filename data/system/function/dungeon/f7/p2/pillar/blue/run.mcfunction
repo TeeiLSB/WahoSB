@@ -24,4 +24,4 @@ execute if score $BluePillarLevel F7.Gimmick.Status matches ..23 positioned 97 1
 
 
 # can crush storm
-scoreboard players set $Blue.StormCanCrush F7.Gimmick.Status 60
+execute if score $BluePillarTurn F7.Gimmick.Status matches 1 run scoreboard players set $Blue.StormCanCrush F7.Gimmick.Status 60

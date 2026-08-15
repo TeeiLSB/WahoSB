@@ -137,6 +137,16 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add head.Hp dummy
  scoreboard objectives add head.Def dummy
 
+ scoreboard objectives add Pet.Dmg dummy
+ scoreboard objectives add Pet.Str dummy
+ scoreboard objectives add Pet.Cc dummy
+ scoreboard objectives add Pet.Cd dummy
+ scoreboard objectives add Pet.As dummy
+ scoreboard objectives add Pet.Fero dummy
+ scoreboard objectives add Pet.Int dummy
+ scoreboard objectives add Pet.Hp dummy
+ scoreboard objectives add Pet.Def dummy
+
 
  #* basedamageは武器そのもの weapondamageはenchantとかの計算をやった後
 

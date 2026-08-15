@@ -20,9 +20,9 @@ scoreboard players reset #agro_check Temporary
 
 # maxorはレーザーの近くにいる以外の時無敵にする
 tag @s add Invulnerable
-execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 if entity @s[distance=..3.5] run tag @s remove Invulnerable
-execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 if entity @s[distance=..3.5] run rotate @s ~ 90
-execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 if entity @s[distance=..3.5] run scoreboard players set #MaxorHittedLaser F7.Gimmick.Status 1
+execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 if entity @s[distance=..3] run tag @s remove Invulnerable
+execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 if entity @s[distance=..3] run rotate @s ~ 90
+execute if score $CrystalCount F7.Gimmick.Status matches 2 positioned 73 226 73 if entity @s[distance=..3] run scoreboard players set #MaxorHittedLaser F7.Gimmick.Status 1
 execute if score $MaxorEnraged F7.Gimmick.Status matches 1 run tag @s add Invulnerable
 
 # 25m以下だよ!!

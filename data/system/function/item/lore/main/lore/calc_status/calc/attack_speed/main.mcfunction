@@ -1,13 +1,14 @@
 ## REFORGE
 # reforge Strがあるならそれを代入 ないなら""
-execute if data entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.As store result storage temp: temp_setting.Reforge int 1 run data get entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.As
+execute if data block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeStatus.As store result storage temp: temp_setting.Reforge int 1 run data get block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeStatus.As
 
 ## 最終計算
- execute store result score #Base Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Stats.AttackSpeed
- execute store result score #Reforge Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.As
- execute store result score #StarAmount Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Star
+ execute store result score #Base Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Stats.AttackSpeed
+ execute store result score #Reforge Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeStatus.As
+ execute store result score #StarAmount Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Star
 # 足す
  scoreboard players operation #Base Temporary += #Reforge Temporary
+function system:item/enchantment/ench_stats/functional_enchantment/chimera/copy_stat {"s":"As"}
 
 # dungeonダメージの計算用にとっておく
  scoreboard players operation #ForDungeon Temporary = #Base Temporary
@@ -21,6 +22,9 @@ execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforg
  scoreboard players operation #CalcStar Temporary += #StarAmount_Copy Temporary
  scoreboard players operation #Base Temporary *= #CalcStar Temporary
  scoreboard players operation #Base Temporary /= #100 Constant
+
+  #dia head
+ execute if items block 0 0 0 container.0 *[custom_data~{DiaHead:1}] run scoreboard players operation #Base Temporary *= #2 Constant
  
 # storageに保存
  execute store result storage temp: temp_setting.Base int 1 run scoreboard players get #Base Temporary
@@ -36,25 +40,27 @@ execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforg
 # Base attack_speed * stat boost
  scoreboard players operation #ForDungeon Temporary *= #StatBoost Temporary
  scoreboard players operation #ForDungeon Temporary /= #100 Constant
+
+ # diahead
+  execute if items block 0 0 0 container.0 *[custom_data~{DiaHead:1}] run scoreboard players operation #ForDungeon Temporary *= #2 Constant
+ 
  execute store result storage temp: temp_setting.Dungeon int 1 run scoreboard players get #ForDungeon Temporary
 
 # dungeonizeされてないitemたち
- execute if entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_setting.Dungeon set from storage temp: temp_setting.Base
+ execute if entity @s[tag=InDungeon] unless data block 0 0 0 Items[0].components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_setting.Dungeon set from storage temp: temp_setting.Base
 
 
 function system:item/lore/main/lore/calc_status/calc/attack_speed/storage with storage temp: temp_setting
 # potatoがついていない場合
  execute if score #PotatoBook.Amount Temporary matches 0 run data modify storage temp: temp_lore.Potato set value ""
 # reforgeがない場合
- execute unless data entity @s SelectedItem.components."minecraft:custom_data".ReforgeStatus.As run \
+ execute unless data block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeStatus.As run \
  data modify storage temp: temp_lore.Reforge set value ""
 #dungeonizeされてない場合
- execute unless entity @s[tag=InDungeon] unless data entity @s SelectedItem.components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set value ""
+ execute unless entity @s[tag=InDungeon] unless data block 0 0 0 Items[0].components."minecraft:custom_data".Dungeonized run data modify storage temp: temp_lore.Dungeon set value ""
 
 # lore生成
  execute if entity @s[tag=InDungeon] if score #Base Temporary matches 1.. run function system:item/lore/main/lore/calc_status/store/attack_speed/dungeon with storage temp: temp_lore
  execute unless entity @s[tag=InDungeon] if score #Base Temporary matches 1.. run function system:item/lore/main/lore/calc_status/store/attack_speed/main with storage temp: temp_lore
 
-scoreboard players operation @s[tag=!InDungeon] MainHand.As = #Base Temporary
-scoreboard players operation @s[tag=InDungeon] MainHand.As = #ForDungeon Temporary
-
+function system:item/lore/main/lore/calc_status/calc/apply_score {"var":"As"}

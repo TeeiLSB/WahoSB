@@ -1,6 +1,7 @@
 # fordebug pls remove this in real run
  scoreboard players reset * F7.Gimmick.Status
 
+scoreboard players reset $F7Storm Tick
 
 # phase set
 scoreboard players set $F7.Phase F7.Gimmick.Status 2

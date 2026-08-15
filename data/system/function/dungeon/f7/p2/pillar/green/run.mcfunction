@@ -26,4 +26,4 @@ scoreboard players operation #Green.PillarLeft F7.Gimmick.Status = $GreenPillarL
 execute if score $GreenPillarLevel F7.Gimmick.Status matches ..23 positioned 43 188 38 run function system:dungeon/f7/p2/pillar/green/fill
 
 # can crush storm
-scoreboard players set $Green.StormCanCrush F7.Gimmick.Status 60
+execute if score $GreenPillarTurn F7.Gimmick.Status matches 1 run scoreboard players set $Green.StormCanCrush F7.Gimmick.Status 60

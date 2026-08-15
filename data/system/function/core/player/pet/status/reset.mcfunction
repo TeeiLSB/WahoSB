@@ -1,0 +1,9 @@
+ scoreboard players set @s Pet.Dmg 0
+ scoreboard players set @s Pet.Str 0
+ scoreboard players set @s Pet.Cc 0
+ scoreboard players set @s Pet.Cd 0
+ scoreboard players set @s Pet.As 0
+ scoreboard players set @s Pet.Fero 0
+ scoreboard players set @s Pet.Int 0
+ scoreboard players set @s Pet.Hp 0
+ scoreboard players set @s Pet.Def 0

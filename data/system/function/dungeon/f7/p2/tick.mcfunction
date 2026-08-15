@@ -19,3 +19,7 @@
 
   # tick count
  scoreboard players add $F7Storm Tick 1
+
+
+# debug
+#title @a actionbar {"score":{"name":"$Green.StormCanCrush","objective":F7.Gimmick.Status}}

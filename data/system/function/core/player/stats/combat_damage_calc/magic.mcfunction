@@ -1,7 +1,7 @@
 
 
 # base damage +5
-scoreboard players operation #DamageDealt Temporary = @s Status.BaseAbilityDamage
+scoreboard players operation #DamageDealt Temporary = #10000 Constant
 scoreboard players operation #DamageDealt Temporary += #5 Constant
 
 # 1+ int/100 

@@ -47,5 +47,4 @@ tag @e remove BouncyTarget
 
 execute on attacker run tag @s remove Shooter
 
-execute if entity @s[type=!#teil:players] at @s run function system:api/autokill/check
 

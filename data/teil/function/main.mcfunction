@@ -23,15 +23,17 @@
 # pet tick
  function system:core/player/pet/tick
 
-# autokill
- function system:api/autokill/tick
-
 # item ability tick
  function system:ability/ability_tick/list
 
 # bot tick
  function system:bot/tick
 
+
+
+# ダメージ処理に干渉するからautokillは最後！！
+ # autokill
+ function system:api/autokill/tick
 
 # tick
  scoreboard players add $tick Tick 1

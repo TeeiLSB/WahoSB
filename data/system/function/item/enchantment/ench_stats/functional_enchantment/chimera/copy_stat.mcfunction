@@ -1,0 +1,1 @@
+$execute if entity @s[tag=FromMainhand] if items entity @s weapon.mainhand *[custom_data~{enchant:{ult:{chimera:5}}}] run scoreboard players operation #Base Temporary += @s Pet.$(s)

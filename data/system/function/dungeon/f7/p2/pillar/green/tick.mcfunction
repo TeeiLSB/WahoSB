@@ -1,1 +1,1 @@
-execute positioned 32 170 12 if entity @p[distance=..2.5,nbt={OnGround:1b}] run function system:dungeon/f7/p2/pillar/green/pressing
+execute if score #GreenPillarUsed F7.Gimmick.Status matches 0 positioned 32 170 12 if entity @p[distance=..2.5,nbt={OnGround:1b}] run function system:dungeon/f7/p2/pillar/green/pressing

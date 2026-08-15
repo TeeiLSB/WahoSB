@@ -1,4 +1,4 @@
-execute store result score #Rarity Temporary run data get entity @s SelectedItem.components."minecraft:custom_data".Rarity
+execute store result score #Rarity Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Rarity
 
 execute if score #Rarity Temporary matches ..1 run data modify storage temp: temp_item.Rarity set value "§f"
 execute if score #Rarity Temporary matches 2 run data modify storage temp: temp_item.Rarity set value "§a"

@@ -1,19 +1,37 @@
+#ガチで頑張って掃除します
+ scoreboard players reset #PotatoBook.Amount Temporary
+ scoreboard players reset #Base Temporary
+ scoreboard players reset #ForDungeon Temporary
+ scoreboard players reset #StatBoost Temporary
+ scoreboard players reset #Aop Temporary
+ scoreboard players reset #Aow Temporary
+ scoreboard players reset #StarAmount_Copy Temporary
+ scoreboard players reset #StarAmount Temporary
+ scoreboard players reset #CalcStar Temporary
+ scoreboard players reset #Reforge Temporary
+ scoreboard players reset #Gem_1 Temporary
+ scoreboard players reset #Gem_2 Temporary
+
+
+
+
 # item name
-data modify storage temp: temp_item.Name set from entity @s SelectedItem.components."minecraft:custom_data".Name
+data modify storage temp: temp_item.Name set from block 0 0 0 Items[0].components."minecraft:custom_data".Name
 #rarityの取得
 function system:item/lore/main/item_name/get_rarity
 
 # reforgeがある場合
-execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforge run \
-data modify storage temp: temp_item.Reforge set from entity @s SelectedItem.components."minecraft:custom_data".Reforge
-execute if data entity @s SelectedItem.components."minecraft:custom_data".Reforge run \
+execute if data block 0 0 0 Items[0].components."minecraft:custom_data".Reforge run \
+data modify storage temp: temp_item.Reforge set from block 0 0 0 Items[0].components."minecraft:custom_data".Reforge
+execute if data block 0 0 0 Items[0].components."minecraft:custom_data".Reforge run \
 data modify storage temp: temp_item.Space set value " "
 
 # reforgeがない場合
-execute unless data entity @s SelectedItem.components."minecraft:custom_data".Reforge run \
+execute unless data block 0 0 0 Items[0].components."minecraft:custom_data".Reforge run \
 data modify storage temp: temp_item.Reforge set value ""
-execute unless data entity @s SelectedItem.components."minecraft:custom_data".Reforge run \
+execute unless data block 0 0 0 Items[0].components."minecraft:custom_data".Reforge run \
 data modify storage temp: temp_item.Space set value ""
+
 
 # starの取得
 function system:item/lore/main/item_name/get_star_amout
@@ -57,13 +75,13 @@ function system:item/lore/main/lore/calc_status/calc/ferocity/main
 function system:item/lore/main/lore/calc_status/calc/intelligence/main
 
 # gem
-execute if data entity @s SelectedItem.components."minecraft:custom_data".HasGemstoneSlot run function system:item/lore/main/lore/gemstone/get/main
+execute if data block 0 0 0 Items[0].components."minecraft:custom_data".HasGemstoneSlot run function system:item/lore/main/lore/gemstone/get/main
 
 ## shot cooldown
 function system:item/lore/main/lore/calc_status/calc/shot_cooldown/main
 
 # space
-execute if data entity @s SelectedItem.components."minecraft:custom_data".enchant run data modify storage temp: loreGen.lores append value ""
+execute if data block 0 0 0 Items[0].components."minecraft:custom_data".enchant run data modify storage temp: loreGen.lores append value ""
 
 # enchantment
 function system:item/lore/main/lore/enchantment/get/main
@@ -75,7 +93,7 @@ data modify storage temp: loreGen.lores append value ""
 function system:item/lore/main/lore/rarity/main
 
 
-item modify entity @s weapon.mainhand {function: "set_lore" ,mode:"replace_all",lore:[]}
+item modify block 0 0 0 container.0 {function: "set_lore" ,mode:"replace_all",lore:[]}
 
 
 # わ

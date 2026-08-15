@@ -8,5 +8,5 @@ execute if score @s Status.AttackSpeed matches 100..149 run data modify storage 
 execute if score @s Status.AttackSpeed matches 150.. run data modify storage temp: temp_lore.Base set value "§7Shot Cooldown: §a0.20s"
 
 # lore生成
- execute if items entity @s weapon.mainhand *[custom_data~{WeaponType:bow}] run \
+ execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:bow}] run \
  function system:item/lore/main/lore/calc_status/store/shot_cooldown/main with storage temp: temp_lore
