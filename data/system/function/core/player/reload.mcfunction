@@ -14,3 +14,4 @@
 
 # refresh timer
  scoreboard players set @a PlayerRefreshTimer 10
+ scoreboard players set @a PlayerRefreshTimer.Armor 10

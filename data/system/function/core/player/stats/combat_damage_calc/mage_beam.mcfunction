@@ -25,28 +25,38 @@ function system:api/big_score/math/divide
 scoreboard players operation #MultiplyBy BigScore = #STR Temporary
 function system:api/big_score/math/multiply
 
-# enchantments sharp7 smite7 proscute6 = 50%+50%+100%+125% = 325% + combat 60 =210% ~~~ ==== 535%
-scoreboard players set #MultiplyBy BigScore 535
+# enchantments sharp7 smite7 proscute6 fist strike5 giant killer = 50%+50%+100%+125%+65% = 380% + combat 60 =210% ~~~ ==== 590%
+scoreboard players set #MultiplyBy BigScore 590
 function system:api/big_score/math/multiply
 scoreboard players operation #DividedBy BigScore = #100 Constant
 function system:api/big_score/math/divide
 
-execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run scoreboard players set #MultiplyBy BigScore 3
-execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run function system:api/big_score/math/multiply
-execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run scoreboard players set #DividedBy BigScore 2
-execute if items entity @s weapon.mainhand *[custom_data~{id:hyperion}] run function system:api/big_score/math/divide
+
+scoreboard players set #MultiplyModifier Temporary 100
+
+# Hyperion: 150%
+execute if items entity @s weapon.mainhand *[custom_model_data={strings:[hyperion]}] run scoreboard players operation #MultiplyModifier Temporary *= #150 Constant
+execute if items entity @s weapon.mainhand *[custom_model_data={strings:[hyperion]}] run scoreboard players operation #MultiplyModifier Temporary /= #100 Constant
+
+# fabled 107%
+execute if items entity @s weapon.mainhand *[custom_data~{Reforge:Fabled}] run scoreboard players operation #MultiplyModifier Temporary *= #107 Constant
+execute if items entity @s weapon.mainhand *[custom_data~{Reforge:Fabled}] run scoreboard players operation #MultiplyModifier Temporary /= #100 Constant
 
 # gdrag
+scoreboard players operation #MultiplyModifier Temporary *= #150 Constant
+scoreboard players operation #MultiplyModifier Temporary /= #100 Constant
 
-scoreboard players operation #MultiplyBy BigScore = #3 Constant
+# multi modify
+scoreboard players operation #MultiplyBy BigScore = #MultiplyModifier Temporary
 function system:api/big_score/math/multiply
-scoreboard players operation #DividedBy BigScore = #2 Constant
+scoreboard players operation #DividedBy BigScore = #100 Constant
 function system:api/big_score/math/divide
+
+
 
 # crit
 scoreboard players operation #MultiplyBy BigScore = #CD Temporary
 function system:api/big_score/math/multiply
-
 
 
 

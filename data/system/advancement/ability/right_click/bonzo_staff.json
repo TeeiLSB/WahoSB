@@ -5,13 +5,13 @@
       "conditions": {
         "item": {
           "components": {
-            "minecraft:custom_model_data": {"strings": ["bonzo_staff"]}
+            "minecraft:custom_model_data": {"strings": ["bonzos_staff"]}
           }
         }
       }
     }
   },
   "rewards": {
-    "function": "system:ability/sword/bonzo_staff"
+    "function": "system:ability/sword/dungeon/bonzo_staff"
   }
 }

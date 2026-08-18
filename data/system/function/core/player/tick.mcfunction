@@ -9,7 +9,7 @@ scoreboard players reset @s[nbt={OnGround:false}] Item.Ability.SpringBoots
 
 # refresh timer
  scoreboard players remove @s[scores={PlayerRefreshTimer=1..}] PlayerRefreshTimer 1
-
+ scoreboard players remove @s[scores={PlayerRefreshTimer.Armor=1..}] PlayerRefreshTimer.Armor 1
 # wither からの攻撃とか
  effect clear @s wither
 

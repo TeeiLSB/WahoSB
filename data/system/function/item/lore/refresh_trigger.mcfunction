@@ -29,4 +29,4 @@ tag @s remove FromFeet
 
 
 
-execute if score @s PlayerRefreshTimer matches 0 run scoreboard players set @s PlayerRefreshTimer 10
+scoreboard players set @s PlayerRefreshTimer.Armor 10

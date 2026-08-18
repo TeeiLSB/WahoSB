@@ -17,6 +17,6 @@
     }
   },
   "rewards": {
-    "function": "system:ability/sword/aspect_of_the_void_shift"
+    "function": "system:ability/sword/misc/aspect_of_the_void_shift"
   }
 }

@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "system:ability/sword/hyperion"
+    "function": "system:ability/sword/dungeon/hyperion"
   }
 }

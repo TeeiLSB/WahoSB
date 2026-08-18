@@ -1,5 +1,3 @@
-# sword tick
- execute as @a at @s run function system:ability/sword/tick
 
 # fero
  execute as @e[scores={Ferocity_CD=0..,Ferocity_Remain=1..},tag=!Invulnerable] at @s run function system:core/player/stats/ferocity/tick

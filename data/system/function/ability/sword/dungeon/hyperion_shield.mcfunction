@@ -2,7 +2,6 @@ execute store result score #ab_amount Temporary run data get entity @s Absorptio
 
 #tellraw @a {score:{"name":"#ab_amount","objective":"Temporary"}}
 
-
 execute if score #ab_amount Temporary matches 1..800 run effect give @s instant_health 1 0 true
 execute if score #ab_amount Temporary matches 801..1200 run effect give @s instant_health 1 1 true
 execute if score #ab_amount Temporary matches 1201..1600 run effect give @s instant_health 1 2 true

@@ -1,0 +1,14 @@
+{
+	"criteria": {
+		"inv": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"slots": {},
+				"items": []
+			}
+		}
+	},
+	"rewards": {
+		"function": "system:core/player/inventory_hotbar_changed"
+	}
+}

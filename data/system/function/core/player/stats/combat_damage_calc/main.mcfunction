@@ -8,7 +8,7 @@ function system:core/player/stats/combat_damage_calc/get_stats/intelligence
 scoreboard players add @s Status.Strength 850
 
 # some stats int! (equipment 350, alc 100, ench 100)
-scoreboard players add @s Status.Strength 550
+scoreboard players add @s Status.Intelligence 550
 
 # dungeon buff
 function system:dungeon/blessing/power

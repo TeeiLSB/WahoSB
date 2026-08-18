@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "system:ability/sword/axe_of_the_shredded"
+    "function": "system:ability/sword/misc/axe_of_the_shredded"
   }
 }

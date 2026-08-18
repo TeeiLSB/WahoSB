@@ -27,6 +27,9 @@ setblock 0 0 0 black_shulker_box
 # bot reload
  function system:bot/reload
 
+# ability reload
+ function system:ability/reload
+
 # score
  scoreboard objectives add CD.default dummy
  scoreboard players set @a CD.default 1
@@ -57,6 +60,15 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add PreviousHotbarSlot dummy
  scoreboard objectives add PlayerSecretCount dummy
  scoreboard objectives add PlayerRefreshTimer dummy
+ scoreboard objectives add PlayerRefreshTimer.Armor dummy
+ scoreboard objectives add PreXPos dummy
+ scoreboard objectives add PreZPos dummy
+ scoreboard objectives add JerryChineGun dummy
+
+# stats boost?
+ scoreboard objectives add Status.BonusStrength dummy
+
+
  # stats scores
  scoreboard objectives add Status.Strength dummy
  scoreboard objectives add Status.CritDamage dummy

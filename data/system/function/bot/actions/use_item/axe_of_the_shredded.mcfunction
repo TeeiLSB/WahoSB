@@ -3,7 +3,7 @@ scoreboard players set @s Bot.IsInAction 1
 
 
 tag @s add This
-execute anchored eyes positioned ^ ^ ^ run execute summon item_display run function system:ability/sword/axe_of_the_shredded_init
+execute anchored eyes positioned ^ ^ ^ run execute summon item_display run function system:ability/sword/misc/axe_of_the_shredded_init
 tag @s remove This
 
 

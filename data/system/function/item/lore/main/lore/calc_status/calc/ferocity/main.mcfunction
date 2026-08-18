@@ -8,7 +8,7 @@ execute if data block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeS
  execute store result score #Reforge Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeStatus.Fero
  execute store result score #StarAmount Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Star
 
- function system:item/enchantment/ench_stats/calc/fero/main
+ function system:item/enchantment/ench_stats/calc/fero
  execute store result score #Ench Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".EnchFero
 # 足す
  scoreboard players operation #Base Temporary += #Reforge Temporary

@@ -24,7 +24,7 @@
             {
         "effect": {
           "type": "run_function",
-          "function": "system:ability/ability_tick/jerry_chine_gun/rotate"
+          "function": "system:ability/ability_tick/jerry_chine_gun/rotate_z"
         }
       },
       {
@@ -42,7 +42,7 @@
       {
         "effect": {
           "type": "run_function",
-          "function": "system:ability/ability_tick/jerry_chine_gun/clear"
+          "function": "system:ability/ability_tick/jerry_chine_gun/clear_z"
         }
       }
     ]

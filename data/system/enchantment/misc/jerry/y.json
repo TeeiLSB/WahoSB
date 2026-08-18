@@ -33,7 +33,7 @@
           "direction": [0.0, 0.1, 0.0],
           "coordinate_scale": [1.0, 1.0, 1.0],
           "magnitude": {
-            "type": "minecraft:linear",
+            "type": "linear",
             "base": 0.1,
             "per_level_above_first": 0.1
           }

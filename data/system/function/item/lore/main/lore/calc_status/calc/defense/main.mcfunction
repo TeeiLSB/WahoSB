@@ -20,7 +20,7 @@ execute store result storage temp: temp_setting.Gemstone int 1 run scoreboard pl
  execute store result score #Base Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Stats.Defense
  execute store result score #Reforge Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeStatus.Def
  execute store result score #StarAmount Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Star
- function system:item/enchantment/ench_stats/calc/def/main
+ function system:item/enchantment/ench_stats/calc/def
  execute store result score #Ench Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".EnchDef
 # 足す
  scoreboard players operation #Base Temporary += #Reforge Temporary

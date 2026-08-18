@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "system:ability/sword/jerry_chine_gun"
+    "function": "system:ability/sword/misc/jerry_chine_gun"
   }
 }

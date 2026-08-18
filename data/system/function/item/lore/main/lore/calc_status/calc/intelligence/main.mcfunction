@@ -11,7 +11,7 @@ execute if data block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeS
  execute store result score #Base Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Stats.Intelligence
  execute store result score #Reforge Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".ReforgeStatus.Int
  execute store result score #StarAmount Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".Star
-  function system:item/enchantment/ench_stats/calc/int/main
+  function system:item/enchantment/ench_stats/calc/int
  execute store result score #Ench Temporary run data get block 0 0 0 Items[0].components."minecraft:custom_data".EnchInt
 # 足す
  scoreboard players operation #Base Temporary += #Reforge Temporary

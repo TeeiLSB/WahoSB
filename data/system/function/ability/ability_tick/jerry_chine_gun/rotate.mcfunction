@@ -7,3 +7,4 @@ execute as @n[type=item_display,tag=Item.Jerry_Chine_Gun] at @s run rotate @p[ta
 tag @s remove This
 
 
+
