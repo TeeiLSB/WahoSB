@@ -7,7 +7,7 @@ execute if score @s CD.default matches 0 anchored eyes positioned ^ ^ ^ run exec
 
 
 # 暴発防止
-execute if score @s CD.default matches 0 run scoreboard players set @s CD.default 4
+execute if score @s CD.default matches 0 run scoreboard players set @s CD.default 3
 
 
 # reset
