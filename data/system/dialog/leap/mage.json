@@ -16,19 +16,19 @@
 	"columns": 2,
 	"actions": [
 		{
-			"label": "Archer",
+			"label": "§6Archer",
 			"width": 200
 		},
 		{
-			"label": "Healer",
+			"label": "§cBerserk",
 			"width": 200
 		},
 		{
-			"label": "Mage",
+			"label": "§dHealer",
 			"width": 200
 		},
 		{
-			"label": "Tank",
+			"label": "§2Tank",
 			"width": 200
 		}
 	]

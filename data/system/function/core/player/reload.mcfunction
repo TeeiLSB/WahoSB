@@ -15,3 +15,11 @@
 # refresh timer
  scoreboard players set @a PlayerRefreshTimer 10
  scoreboard players set @a PlayerRefreshTimer.Armor 10
+
+
+
+
+ # status?
+ scoreboard players operation @s Status.CurrentHealth = @s Status.Health
+ scoreboard players operation @s Status.CurrentMana = @s Status.Mana
+ 

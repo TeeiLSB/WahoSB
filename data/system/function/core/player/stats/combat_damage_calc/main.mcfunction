@@ -3,6 +3,9 @@ function system:core/player/stats/combat_damage_calc/get_stats/basedamage
 function system:core/player/stats/combat_damage_calc/get_stats/critdamage
 function system:core/player/stats/combat_damage_calc/get_stats/strength
 function system:core/player/stats/combat_damage_calc/get_stats/intelligence
+function system:core/player/stats/combat_damage_calc/get_stats/defense
+function system:core/player/stats/combat_damage_calc/get_stats/health
+function system:core/player/stats/combat_damage_calc/get_stats/ferocity
 
 # some stats str! (foraging 50,gdrag300,equipment 500)
 scoreboard players add @s Status.Strength 850
@@ -11,8 +14,20 @@ scoreboard players add @s Status.Strength 850
 scoreboard players add @s Status.Intelligence 550
 
 # dungeon buff
-function system:dungeon/blessing/power
-function system:dungeon/blessing/wisdom
+execute if entity @s[tag=InDungeon] run function system:dungeon/blessing/power
+execute if entity @s[tag=InDungeon] run function system:dungeon/blessing/wisdom
+execute if entity @s[tag=InDungeon] run function system:dungeon/blessing/stone
+execute if entity @s[tag=InDungeon] run function system:dungeon/blessing/life
+
+# mana?
+scoreboard players operation @s Status.Mana = @s Status.Intelligence
+ scoreboard players operation @s Status.Mana += #100 Constant
+ scoreboard players operation @s Status.CurrentMana < @s Status.Mana
+
+ # hp?
+  scoreboard players operation @s Status.CurrentHealth < @s Status.Health
+
+
 
 # base damage +5
 scoreboard players operation #DamageDealt Temporary = @s Status.WeaponDamage
@@ -62,4 +77,4 @@ execute if entity @s[tag=Dungeon.Class.Mage] run function system:core/player/sta
 
 
 # status check actionbar
-title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage.b"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage.m"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage.k"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}},"      §c=ABD ",{"score":{"name":"@s","objective":"Status.AbilityDamage"}},"      §a=BAD ",{"score":{"name":"@s","objective":"Status.BaseAbilityDamage"}},"      §a=MGD ",{"score":{"name":"@s","objective":"Status.MagicDamage"}}]
+#title @s actionbar ["§7BASE ",{"score":{"name":"@s","objective":"Status.WeaponDamage"}},"        §cSTR ",{"score":{"name":"@s","objective":"Status.Strength"}},"        §9CD ",{"score":{"name":"@s","objective":"Status.CritDamage"}},"        §a= Dealt ",{"score":{"name":"@s","objective":"Status.MeleeDamage"}},"      §bInt ",{"score":{"name":"@s","objective":"Status.Intelligence"}},"      §d=Beam ",{"score":{"name":"@s","objective":"Status.MageBeamDamage.b"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage.m"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage.k"}},",",{"score":{"name":"@s","objective":"Status.MageBeamDamage"}},"      §c=ABD ",{"score":{"name":"@s","objective":"Status.AbilityDamage"}},"      §a=BAD ",{"score":{"name":"@s","objective":"Status.BaseAbilityDamage"}},"      §a=MGD ",{"score":{"name":"@s","objective":"Status.MagicDamage"}}]

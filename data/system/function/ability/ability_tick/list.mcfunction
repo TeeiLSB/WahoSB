@@ -8,7 +8,8 @@
 # rag axe Temp
 function system:ability/ability_tick/weapon/ragnarock/tick
 
-
+# gyrokinetic wand
+ execute as @e[type=marker,tag=GyroCenterMarker] at @s run function system:ability/wand/gyrokinetic_wand/marker_tick
 
 
 

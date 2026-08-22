@@ -34,16 +34,22 @@ scoreboard players reset #CurrentHealth Temporary
 scoreboard players reset #Damage Temporary
 
 
-# damage apply
-scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
-function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
-
-
 # bouncy
 execute store result score #rng Temporary run random value 0..1
 execute if entity @s[tag=!Invulnerable] if score #rng Temporary matches 0..1 run tag @e[distance=0.1..6,type=!mannequin,type=!item_display, type=!player,type=!item,type=!marker,type=!arrow,type=!armor_stand,limit=1,sort=random] add BouncyTarget
 execute at @s positioned ~ ~1 ~ facing entity @n[tag=BouncyTarget] eyes summon arrow run function system:ability/bow/terminator/arrow/wow/init
 tag @e remove BouncyTarget
+
+
+# damage apply
+scoreboard players operation @s[tag=!Invulnerable] Status.Health -= #damage Temporary
+function system:api/big_score/normalize/first {"as":"@s","obj":"Status.Health"}
+
+
+    # hp比較
+    function system:api/big_score/compare/first {"l_as":"@s","l_obj":"Status.Health","b":"0","m":"0","k":"0","n":"0"}
+    # 0以下だったら死んだときの処理 (Phaseが1のときのみ(phaseは25mtriggerで1になってるはずー))
+    execute if entity @s[tag=!Mob.Boss,tag=WahoMobs,type=!#teil:players] run function system:api/autokill/execute
 
 execute on attacker run tag @s remove Shooter
 

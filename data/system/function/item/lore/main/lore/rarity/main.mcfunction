@@ -37,6 +37,7 @@ execute unless items block 0 0 0 container.0 *[custom_data~{Dungeonized:1}] run 
  execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:bow}] run data modify storage temp: rarity.type set value " §lBOW"
  execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:sword}] run data modify storage temp: rarity.type set value " §lSWORD"
  execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:axe}] run data modify storage temp: rarity.type set value " §lAXE"
+ execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:wand}] run data modify storage temp: rarity.type set value " §lWAND"
  execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:helmet}] run data modify storage temp: rarity.type set value " §lHELMET"
  execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:chestplate}] run data modify storage temp: rarity.type set value " §lCHESTPLATE"
  execute if items block 0 0 0 container.0 *[custom_data~{WeaponType:leggings}] run data modify storage temp: rarity.type set value " §lLEGGINGS"

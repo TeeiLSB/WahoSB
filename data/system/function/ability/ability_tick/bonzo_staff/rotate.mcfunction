@@ -3,7 +3,8 @@ data modify storage player: rotation.y set from entity @s Rotation[0]
 
 tag @s add This
 execute as @n[type=item_display,tag=Item.BonzoStaff.Balloon] at @s run rotate @s facing entity @p[tag=This]
-execute as @n[type=item_display,tag=Item.BonzoStaff.Balloon] at @s run rotate @p[tag=This] ~ -12
+execute as @n[type=item_display,tag=Item.BonzoStaff.Balloon] at @s run rotate @p[tag=This] ~ -13
 tag @s remove This
 
-
+# motion reset
+tp @s @s

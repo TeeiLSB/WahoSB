@@ -1,3 +1,6 @@
+# base
+scoreboard players set @s Status.Intelligence 100
+
 scoreboard players operation @s Status.Intelligence = @s MainHand.Int
 scoreboard players operation @s Status.Intelligence += @s head.Int
 scoreboard players operation @s Status.Intelligence += @s Chest.Int

@@ -44,6 +44,9 @@
 
 clone 69 220 152 77 220 169 69 220 32
 
+# floor set to p3
+clone 76 230 161 86 231 171 95 167 36
+
 # summon maxor
  execute positioned 73 228 53 summon wither run function asset:mobs/dungeon/f7/maxor
 

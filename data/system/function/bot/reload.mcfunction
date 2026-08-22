@@ -10,10 +10,10 @@ team add Mage
 team modify Mage color aqua
 
 team add Berserk
-team modify Berserk color gold
+team modify Berserk color red
 
 team add Archer
-team modify Archer color red
+team modify Archer color gold
 
 team add Healer
 team modify Healer color light_purple

@@ -1,0 +1,36 @@
+{
+	"description": "foo",
+	"supported_items": [
+		"recovery_compass"
+	],
+	"weight": 1,
+	"max_level": 1,
+	"min_cost": {
+		"base": 0,
+		"per_level_above_first": 0
+	},
+	"max_cost": {
+		"base": 0,
+		"per_level_above_first": 0
+	},
+	"anvil_cost": 0,
+	"slots": [
+		"saddle"
+	],
+	"effects": {
+		"minecraft:post_attack": [
+			{
+				"requirements": {
+					"condition": "minecraft:damage_source_properties",
+					"predicate": {}
+				},
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "system:core/player/combat/attacked_by_entity/player_trigger"
+				},
+				"enchanted": "victim",
+				"affected": "victim"
+			}
+		]
+	}
+}

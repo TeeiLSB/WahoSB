@@ -1,0 +1,1 @@
+execute positioned 46 169 53 run function system:dungeon/f7/p2/summon/wither_miner/sub_init

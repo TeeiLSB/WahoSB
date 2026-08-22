@@ -27,7 +27,8 @@
 # bot tick
  function system:bot/tick
 
-
+# gui sb menu
+ function system:core/gui/sb_menu/tick
 
 # ダメージ処理に干渉するからautokillは最後！！
  # autokill

@@ -1,4 +1,4 @@
-data merge entity @s {Invulnerable:1b,CustomNameVisible:1b,CustomName:{"text":"§cArcher"},hide_description:true,Glowing:1b}
+data merge entity @s {Invulnerable:1b,CustomNameVisible:1b,CustomName:{"text":"§6Archer"},hide_description:true,Glowing:1b}
 
 effect give @s resistance infinite 255 true
 effect give @s fire_resistance infinite 255 true

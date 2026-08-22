@@ -17,3 +17,6 @@ scoreboard players reset #player_pos Temporary
 kill @e[type=marker,tag=tp_check]
 
 playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.5 1
+
+# motion reset
+tp @s @s

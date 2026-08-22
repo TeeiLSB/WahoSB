@@ -13,9 +13,16 @@ execute if score @s CD.default matches 0 unless score @s CD.hyperion matches 1..
 execute if score @s CD.default matches 0 unless score @s CD.hyperion matches 1.. run effect give @s resistance 5 0 false
 execute if score @s CD.default matches 0 unless score @s CD.hyperion matches 1.. run scoreboard players set @s CD.hyperion 100
 
+# mana
+execute if score @s CD.default matches 0 unless items entity @s weapon.mainhand *[custom_data~{enchant:{ult:{ultimate_wise:5}}}] run scoreboard players remove @s Status.CurrentMana 300
+execute if score @s CD.default matches 0 if items entity @s weapon.mainhand *[custom_data~{enchant:{ult:{ultimate_wise:5}}}] run scoreboard players remove @s Status.CurrentMana 150
+
+
+
+
+
 # 暴発防止
 execute if score @s CD.default matches 0 run scoreboard players set @s CD.default 4
-
 
 # reset
 advancement revoke @s only system:ability/right_click/hyperion

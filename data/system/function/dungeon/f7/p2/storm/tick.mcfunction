@@ -1,5 +1,5 @@
 # playerを追尾
-execute if score $F7Storm Tick matches 560.. run function system:dungeon/f7/p2/storm/follow_player
+execute if score $F7Storm Tick matches 640.. run function system:dungeon/f7/p2/storm/follow_player
 
 # pillar crush check
 function system:dungeon/f7/p2/storm/crush_check

@@ -1,5 +1,6 @@
 # motion用marker
 execute in overworld run summon marker 0.0 0.0 0.0 {UUID:[I; 2106,5308417,0,0]}
+execute in overworld run summon marker 0.0 0.0 0.0 {UUID:[I;1572350748,2104772740,-1083294867,-1571129314]}
 
 scoreboard objectives add Temporary dummy
 scoreboard objectives add Constant dummy
@@ -84,6 +85,9 @@ setblock 0 0 0 black_shulker_box
  scoreboard objectives add Status.MagicDamage dummy
  scoreboard objectives add Status.SpeedCap dummy
  scoreboard objectives add Status.Speed dummy
+ scoreboard objectives add Status.CurrentHealth dummy
+ scoreboard objectives add Status.CurrentMana dummy
+ scoreboard objectives add Status.Mana dummy
 
 # big score
   scoreboard objectives add Status.MageBeamDamage dummy

@@ -1,3 +1,8 @@
+# base
+scoreboard players set @s Status.CritDamage 50
+
+
+
 scoreboard players operation @s Status.CritDamage = @s MainHand.Cd
 scoreboard players operation @s Status.CritDamage += @s head.Cd
 scoreboard players operation @s Status.CritDamage += @s Chest.Cd

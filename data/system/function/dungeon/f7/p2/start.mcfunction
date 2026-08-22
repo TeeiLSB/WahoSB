@@ -1,3 +1,6 @@
+
+
+
 # fordebug pls remove this in real run
  scoreboard players reset * F7.Gimmick.Status
 
